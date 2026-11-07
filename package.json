@@ -1,0 +1,17 @@
+{
+  "name": "reclaim-cleaner-mygo",
+  "private": true,
+  "version": "0.5.0",
+  "description": "ReClaim Cleaner, ported from Tauri/Rust to Go with MyGo.",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "build": "bun run --cwd frontend build",
+    "typecheck": "bun run --cwd frontend typecheck",
+    "test": "bun run --cwd frontend test",
+    "dev": "mygo dev"
+  },
+  "devDependencies": {
+    "mygo-cli": "^0.8.3"
+  }
+}

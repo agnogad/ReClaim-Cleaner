@@ -1,0 +1,137 @@
+name: Release
+
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Tag to release (e.g. v0.5.0)"
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  # Set the version from the tag once, so every build reads the same one.
+  prepare:
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.v.outputs.version }}
+      tag: ${{ steps.v.outputs.tag }}
+    steps:
+      - id: v
+        run: |
+          tag="${GITHUB_REF_NAME}"
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            tag="${{ github.event.inputs.tag }}"
+          fi
+          echo "tag=$tag" >> "$GITHUB_OUTPUT"
+          echo "version=${tag#v}" >> "$GITHUB_OUTPUT"
+
+  build:
+    name: ${{ matrix.name }}
+    needs: prepare
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: ubuntu-latest
+            platform: linux/amd64
+            name: linux-amd64
+          - os: ubuntu-latest
+            platform: linux/arm64
+            name: linux-arm64
+          - os: windows-latest
+            platform: windows/amd64
+            name: windows-amd64
+          - os: macos-latest
+            platform: darwin/universal
+            name: darwin-universal
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ needs.prepare.outputs.tag }}
+
+      - uses: actions/setup-go@v6
+        with:
+          go-version: "1.27"
+          cache: true
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install dependencies
+        run: |
+          bun install --frozen-lockfile
+          bun install --frozen-lockfile --cwd frontend
+
+      - name: Set the version from the tag
+        shell: bash
+        run: |
+          for f in mygo.config.ts frontend/package.json; do
+            tmp=$(mktemp)
+            sed -E "s/(\"?version\"?[[:space:]]*:[[:space:]]*)\"[^\"]*\"/\1\"${{ needs.prepare.outputs.version }}\"/" "$f" > "$tmp"
+            mv "$tmp" "$f"
+          done
+          grep version mygo.config.ts frontend/package.json
+
+      # macOS: ad-hoc sign so the .dmg opens without a Developer ID, and skip
+      # notarization (needs an Apple account this repo does not have).
+      - name: Build
+        shell: bash
+        run: |
+          extra=""
+          case "${{ matrix.platform }}" in
+            darwin/*) extra="-sign - -skip-notarize" ;;
+          esac
+          bunx mygo build -o build -platform "${{ matrix.platform }}" $extra
+
+      - name: Collect artifacts
+        shell: bash
+        run: |
+          mkdir -p upload
+          # Installers, packages and archives; the loose executable is skipped.
+          find build -type f \( -name '*.dmg' -o -name '*.deb' -o -name '*.tar.gz' \
+            -o -name '*-setup-*.exe' -o -name 'install.sh' -o -name 'install.ps1' \
+            -o -name 'SHA256SUMS' -o -name 'PKGBUILD' \) -exec cp {} upload/ \;
+          ls -la upload
+
+      - uses: actions/upload-artifact@v5
+        with:
+          name: ${{ matrix.name }}
+          path: upload/*
+          if-no-files-found: error
+
+  release:
+    name: Publish
+    needs: [prepare, build]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ needs.prepare.outputs.tag }}
+
+      - uses: actions/download-artifact@v5
+        with:
+          path: dist
+          merge-multiple: true
+
+      # One checksum file over every platform's artifacts.
+      - name: Checksums
+        run: |
+          cd dist
+          find . -maxdepth 1 -type f ! -name SHA256SUMS -printf '%P\n' | sort \
+            | xargs sha256sum > SHA256SUMS
+          cat SHA256SUMS
+
+      - name: Publish
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ needs.prepare.outputs.tag }}
+          name: ReClaim Cleaner ${{ needs.prepare.outputs.version }}
+          draft: false
+          generate_release_notes: true
+          files: dist/*

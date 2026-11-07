@@ -1,0 +1,68 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  go:
+    name: Go (build, vet, test)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-go@v6
+        with:
+          go-version: "1.27"
+          cache: true
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install frontend dependencies
+        run: bun install --frozen-lockfile --cwd frontend
+
+      # main.go embeds frontend/dist, so it has to exist before any go build.
+      - name: Build the frontend
+        run: bun run --cwd frontend build
+
+      - name: Formatting
+        run: test -z "$(gofmt -l . | grep -v node_modules)"
+
+      - name: Vet
+        run: go vet ./...
+
+      - name: Test
+        run: go test ./... -race
+
+      - name: Cross-compile
+        run: |
+          for t in linux/amd64 linux/arm64 windows/amd64 darwin/arm64 darwin/amd64; do
+            echo "--- $t"
+            GOOS="${t%/*}" GOARCH="${t#*/}" go build ./...
+          done
+
+  web:
+    name: Frontend (typecheck, test)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install frontend dependencies
+        run: bun install --frozen-lockfile --cwd frontend
+
+      - name: Typecheck
+        run: bun run --cwd frontend typecheck
+
+      - name: Test
+        run: bun run --cwd frontend test

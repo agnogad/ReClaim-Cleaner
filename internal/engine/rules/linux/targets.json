@@ -1,0 +1,2743 @@
+[
+  {
+    "id": "chrome-cache",
+    "group": "browser",
+    "name": "Chrome cache",
+    "nameTr": "Chrome önbelleği",
+    "description": "HTTP and code caches of every Chrome profile; cookies, history, passwords and sessions are not touched, pages load slower once. The browser must be closed.",
+    "descriptionTr": "Tüm Chrome profillerinin HTTP ve kod önbellekleri; çerezlere, geçmişe, parolalara ve oturumlara dokunulmaz, sayfalar bir kez yavaş yüklenir. Tarayıcı kapalı olmalı.",
+    "paths": [
+      "%XDG_CACHE%/google-chrome/*/Cache",
+      "%XDG_CACHE%/google-chrome/*/Code Cache",
+      "%XDG_CACHE%/google-chrome-beta/*/Cache",
+      "%XDG_CACHE%/google-chrome-beta/*/Code Cache",
+      "%XDG_CACHE%/google-chrome-unstable/*/Cache",
+      "%XDG_CACHE%/google-chrome-unstable/*/Code Cache"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "safe",
+    "admin": false,
+    "closeApps": [
+      "chrome"
+    ],
+    "verified": true,
+    "source": "https://chromium.googlesource.com/chromium/src/+/main/docs/user_data_dir.md"
+  },
+  {
+    "id": "chrome-sandbox-cache",
+    "group": "browser",
+    "name": "Chrome cache (Flatpak, Snap)",
+    "nameTr": "Chrome önbelleği (Flatpak, Snap)",
+    "description": "HTTP and code caches of Chrome installed as a Flatpak or Snap; profile data is not touched, pages load slower once. The browser must be closed.",
+    "descriptionTr": "Flatpak veya Snap olarak kurulu Chrome için HTTP ve kod önbellekleri; profil verilerine dokunulmaz, sayfalar bir kez yavaş yüklenir. Tarayıcı kapalı olmalı.",
+    "paths": [
+      "%HOME%/.var/app/com.google.Chrome/cache/google-chrome/*/Cache",
+      "%HOME%/.var/app/com.google.Chrome/cache/google-chrome/*/Code Cache"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "safe",
+    "admin": false,
+    "closeApps": [
+      "chrome"
+    ],
+    "verified": false,
+    "source": "https://docs.flatpak.org/en/latest/conventions.html"
+  },
+  {
+    "id": "chrome-sw-cache",
+    "group": "browser",
+    "name": "Chrome Service Worker cache",
+    "nameTr": "Chrome Service Worker önbelleği",
+    "description": "Offline copies that websites keep in the Chrome profile's Service Worker CacheStorage; only that folder is cleaned, sites may need to go online again before they work offline.",
+    "descriptionTr": "Web sitelerinin Chrome profilindeki Service Worker CacheStorage içinde tuttuğu çevrimdışı kopyalar; yalnızca bu klasör temizlenir, siteler çevrimdışı çalışmadan önce yeniden çevrimiçi olmak isteyebilir.",
+    "paths": [
+      "%XDG_CONFIG%/google-chrome/*/Service Worker/CacheStorage",
+      "%XDG_CONFIG%/google-chrome-beta/*/Service Worker/CacheStorage",
+      "%XDG_CONFIG%/google-chrome-unstable/*/Service Worker/CacheStorage"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "review",
+    "admin": false,
+    "closeApps": [
+      "chrome"
+    ],
+    "verified": false,
+    "source": "https://chromium.googlesource.com/chromium/src/+/main/docs/user_data_dir.md"
+  },
+  {
+    "id": "chromium-cache",
+    "group": "browser",
+    "name": "Chromium cache",
+    "nameTr": "Chromium önbelleği",
+    "description": "HTTP and code caches of every Chromium profile; cookies, history, passwords and sessions are not touched, pages load slower once. The browser must be closed.",
+    "descriptionTr": "Tüm Chromium profillerinin HTTP ve kod önbellekleri; çerezlere, geçmişe, parolalara ve oturumlara dokunulmaz, sayfalar bir kez yavaş yüklenir. Tarayıcı kapalı olmalı.",
+    "paths": [
+      "%XDG_CACHE%/chromium/*/Cache",
+      "%XDG_CACHE%/chromium/*/Code Cache"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "safe",
+    "admin": false,
+    "closeApps": [
+      "chromium",
+      "chromium-browser",
+      "chrome"
+    ],
+    "verified": true,
+    "source": "https://chromium.googlesource.com/chromium/src/+/main/docs/user_data_dir.md"
+  },
+  {
+    "id": "chromium-sandbox-cache",
+    "group": "browser",
+    "name": "Chromium cache (Flatpak, Snap)",
+    "nameTr": "Chromium önbelleği (Flatpak, Snap)",
+    "description": "HTTP and code caches of Chromium installed as a Flatpak or Snap; profile data is not touched, pages load slower once. The browser must be closed.",
+    "descriptionTr": "Flatpak veya Snap olarak kurulu Chromium için HTTP ve kod önbellekleri; profil verilerine dokunulmaz, sayfalar bir kez yavaş yüklenir. Tarayıcı kapalı olmalı.",
+    "paths": [
+      "%HOME%/.var/app/org.chromium.Chromium/cache/chromium/*/Cache",
+      "%HOME%/.var/app/org.chromium.Chromium/cache/chromium/*/Code Cache",
+      "%HOME%/snap/chromium/common/.cache/chromium/*/Cache",
+      "%HOME%/snap/chromium/common/.cache/chromium/*/Code Cache"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "safe",
+    "admin": false,
+    "closeApps": [
+      "chromium",
+      "chromium-browser",
+      "chrome"
+    ],
+    "verified": false,
+    "source": "https://docs.flatpak.org/en/latest/conventions.html"
+  },
+  {
+    "id": "chromium-sw-cache",
+    "group": "browser",
+    "name": "Chromium Service Worker cache",
+    "nameTr": "Chromium Service Worker önbelleği",
+    "description": "Offline copies that websites keep in the Chromium profile's Service Worker CacheStorage; only that folder is cleaned, sites may need to go online again before they work offline.",
+    "descriptionTr": "Web sitelerinin Chromium profilindeki Service Worker CacheStorage içinde tuttuğu çevrimdışı kopyalar; yalnızca bu klasör temizlenir, siteler çevrimdışı çalışmadan önce yeniden çevrimiçi olmak isteyebilir.",
+    "paths": [
+      "%XDG_CONFIG%/chromium/*/Service Worker/CacheStorage"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "review",
+    "admin": false,
+    "closeApps": [
+      "chromium",
+      "chromium-browser",
+      "chrome"
+    ],
+    "verified": false,
+    "source": "https://chromium.googlesource.com/chromium/src/+/main/docs/user_data_dir.md"
+  },
+  {
+    "id": "brave-cache",
+    "group": "browser",
+    "name": "Brave cache",
+    "nameTr": "Brave önbelleği",
+    "description": "HTTP and code caches of every Brave profile; cookies, history, passwords and sessions are not touched, pages load slower once. The browser must be closed.",
+    "descriptionTr": "Tüm Brave profillerinin HTTP ve kod önbellekleri; çerezlere, geçmişe, parolalara ve oturumlara dokunulmaz, sayfalar bir kez yavaş yüklenir. Tarayıcı kapalı olmalı.",
+    "paths": [
+      "%XDG_CACHE%/BraveSoftware/Brave-Browser/*/Cache",
+      "%XDG_CACHE%/BraveSoftware/Brave-Browser/*/Code Cache"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "safe",
+    "admin": false,
+    "closeApps": [
+      "brave"
+    ],
+    "verified": false
+  },
+  {
+    "id": "brave-sandbox-cache",
+    "group": "browser",
+    "name": "Brave cache (Flatpak, Snap)",
+    "nameTr": "Brave önbelleği (Flatpak, Snap)",
+    "description": "HTTP and code caches of Brave installed as a Flatpak or Snap; profile data is not touched, pages load slower once. The browser must be closed.",
+    "descriptionTr": "Flatpak veya Snap olarak kurulu Brave için HTTP ve kod önbellekleri; profil verilerine dokunulmaz, sayfalar bir kez yavaş yüklenir. Tarayıcı kapalı olmalı.",
+    "paths": [
+      "%HOME%/.var/app/com.brave.Browser/cache/BraveSoftware/Brave-Browser/*/Cache",
+      "%HOME%/.var/app/com.brave.Browser/cache/BraveSoftware/Brave-Browser/*/Code Cache",
+      "%HOME%/snap/brave/common/.cache/BraveSoftware/Brave-Browser/*/Cache",
+      "%HOME%/snap/brave/common/.cache/BraveSoftware/Brave-Browser/*/Code Cache"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "safe",
+    "admin": false,
+    "closeApps": [
+      "brave"
+    ],
+    "verified": false,
+    "source": "https://docs.flatpak.org/en/latest/conventions.html"
+  },
+  {
+    "id": "brave-sw-cache",
+    "group": "browser",
+    "name": "Brave Service Worker cache",
+    "nameTr": "Brave Service Worker önbelleği",
+    "description": "Offline copies that websites keep in the Brave profile's Service Worker CacheStorage; only that folder is cleaned, sites may need to go online again before they work offline.",
+    "descriptionTr": "Web sitelerinin Brave profilindeki Service Worker CacheStorage içinde tuttuğu çevrimdışı kopyalar; yalnızca bu klasör temizlenir, siteler çevrimdışı çalışmadan önce yeniden çevrimiçi olmak isteyebilir.",
+    "paths": [
+      "%XDG_CONFIG%/BraveSoftware/Brave-Browser/*/Service Worker/CacheStorage"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "review",
+    "admin": false,
+    "closeApps": [
+      "brave"
+    ],
+    "verified": false,
+    "source": "https://chromium.googlesource.com/chromium/src/+/main/docs/user_data_dir.md"
+  },
+  {
+    "id": "edge-cache",
+    "group": "browser",
+    "name": "Edge cache",
+    "nameTr": "Edge önbelleği",
+    "description": "HTTP and code caches of every Edge profile; cookies, history, passwords and sessions are not touched, pages load slower once. The browser must be closed.",
+    "descriptionTr": "Tüm Edge profillerinin HTTP ve kod önbellekleri; çerezlere, geçmişe, parolalara ve oturumlara dokunulmaz, sayfalar bir kez yavaş yüklenir. Tarayıcı kapalı olmalı.",
+    "paths": [
+      "%XDG_CACHE%/microsoft-edge/*/Cache",
+      "%XDG_CACHE%/microsoft-edge/*/Code Cache"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "safe",
+    "admin": false,
+    "closeApps": [
+      "msedge"
+    ],
+    "verified": false
+  },
+  {
+    "id": "edge-sandbox-cache",
+    "group": "browser",
+    "name": "Edge cache (Flatpak, Snap)",
+    "nameTr": "Edge önbelleği (Flatpak, Snap)",
+    "description": "HTTP and code caches of Edge installed as a Flatpak or Snap; profile data is not touched, pages load slower once. The browser must be closed.",
+    "descriptionTr": "Flatpak veya Snap olarak kurulu Edge için HTTP ve kod önbellekleri; profil verilerine dokunulmaz, sayfalar bir kez yavaş yüklenir. Tarayıcı kapalı olmalı.",
+    "paths": [
+      "%HOME%/.var/app/com.microsoft.Edge/cache/microsoft-edge/*/Cache",
+      "%HOME%/.var/app/com.microsoft.Edge/cache/microsoft-edge/*/Code Cache"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "safe",
+    "admin": false,
+    "closeApps": [
+      "msedge"
+    ],
+    "verified": false,
+    "source": "https://docs.flatpak.org/en/latest/conventions.html"
+  },
+  {
+    "id": "edge-sw-cache",
+    "group": "browser",
+    "name": "Edge Service Worker cache",
+    "nameTr": "Edge Service Worker önbelleği",
+    "description": "Offline copies that websites keep in the Edge profile's Service Worker CacheStorage; only that folder is cleaned, sites may need to go online again before they work offline.",
+    "descriptionTr": "Web sitelerinin Edge profilindeki Service Worker CacheStorage içinde tuttuğu çevrimdışı kopyalar; yalnızca bu klasör temizlenir, siteler çevrimdışı çalışmadan önce yeniden çevrimiçi olmak isteyebilir.",
+    "paths": [
+      "%XDG_CONFIG%/microsoft-edge/*/Service Worker/CacheStorage"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "review",
+    "admin": false,
+    "closeApps": [
+      "msedge"
+    ],
+    "verified": false,
+    "source": "https://chromium.googlesource.com/chromium/src/+/main/docs/user_data_dir.md"
+  },
+  {
+    "id": "vivaldi-cache",
+    "group": "browser",
+    "name": "Vivaldi cache",
+    "nameTr": "Vivaldi önbelleği",
+    "description": "HTTP and code caches of every Vivaldi profile; cookies, history, passwords and sessions are not touched, pages load slower once. The browser must be closed.",
+    "descriptionTr": "Tüm Vivaldi profillerinin HTTP ve kod önbellekleri; çerezlere, geçmişe, parolalara ve oturumlara dokunulmaz, sayfalar bir kez yavaş yüklenir. Tarayıcı kapalı olmalı.",
+    "paths": [
+      "%XDG_CACHE%/vivaldi/*/Cache",
+      "%XDG_CACHE%/vivaldi/*/Code Cache"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "safe",
+    "admin": false,
+    "closeApps": [
+      "vivaldi-bin"
+    ],
+    "verified": false
+  },
+  {
+    "id": "vivaldi-sandbox-cache",
+    "group": "browser",
+    "name": "Vivaldi cache (Flatpak, Snap)",
+    "nameTr": "Vivaldi önbelleği (Flatpak, Snap)",
+    "description": "HTTP and code caches of Vivaldi installed as a Flatpak or Snap; profile data is not touched, pages load slower once. The browser must be closed.",
+    "descriptionTr": "Flatpak veya Snap olarak kurulu Vivaldi için HTTP ve kod önbellekleri; profil verilerine dokunulmaz, sayfalar bir kez yavaş yüklenir. Tarayıcı kapalı olmalı.",
+    "paths": [
+      "%HOME%/.var/app/com.vivaldi.Vivaldi/cache/vivaldi/*/Cache",
+      "%HOME%/.var/app/com.vivaldi.Vivaldi/cache/vivaldi/*/Code Cache"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "safe",
+    "admin": false,
+    "closeApps": [
+      "vivaldi-bin"
+    ],
+    "verified": false,
+    "source": "https://docs.flatpak.org/en/latest/conventions.html"
+  },
+  {
+    "id": "vivaldi-sw-cache",
+    "group": "browser",
+    "name": "Vivaldi Service Worker cache",
+    "nameTr": "Vivaldi Service Worker önbelleği",
+    "description": "Offline copies that websites keep in the Vivaldi profile's Service Worker CacheStorage; only that folder is cleaned, sites may need to go online again before they work offline.",
+    "descriptionTr": "Web sitelerinin Vivaldi profilindeki Service Worker CacheStorage içinde tuttuğu çevrimdışı kopyalar; yalnızca bu klasör temizlenir, siteler çevrimdışı çalışmadan önce yeniden çevrimiçi olmak isteyebilir.",
+    "paths": [
+      "%XDG_CONFIG%/vivaldi/*/Service Worker/CacheStorage"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "review",
+    "admin": false,
+    "closeApps": [
+      "vivaldi-bin"
+    ],
+    "verified": false,
+    "source": "https://chromium.googlesource.com/chromium/src/+/main/docs/user_data_dir.md"
+  },
+  {
+    "id": "opera-cache",
+    "group": "browser",
+    "name": "Opera cache",
+    "nameTr": "Opera önbelleği",
+    "description": "HTTP cache of Opera, including its Flatpak and Snap installs; cookies, history and passwords are not touched, pages load slower once. The browser must be closed.",
+    "descriptionTr": "Flatpak ve Snap kurulumları dahil Opera'nın HTTP önbelleği; çerezlere, geçmişe ve parolalara dokunulmaz, sayfalar bir kez yavaş yüklenir. Tarayıcı kapalı olmalı.",
+    "paths": [
+      "%XDG_CACHE%/opera/Cache",
+      "%HOME%/.var/app/com.opera.Opera/cache/opera/Cache",
+      "%HOME%/snap/opera/common/.cache/opera/Cache"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "safe",
+    "admin": false,
+    "closeApps": [
+      "opera"
+    ],
+    "verified": false
+  },
+  {
+    "id": "firefox-cache",
+    "group": "browser",
+    "name": "Firefox cache",
+    "nameTr": "Firefox önbelleği",
+    "description": "HTTP and startup caches of every Firefox profile, including its Flatpak and Snap installs. They live under the cache folder, apart from the profile, so cookies, history and passwords are not touched. The browser must be closed.",
+    "descriptionTr": "Flatpak ve Snap kurulumları dahil tüm Firefox profillerinin HTTP ve başlangıç önbellekleri. Profilden ayrı, önbellek klasöründe dururlar; çerezlere, geçmişe ve parolalara dokunulmaz. Tarayıcı kapalı olmalı.",
+    "paths": [
+      "%XDG_CACHE%/mozilla/firefox/*/cache2",
+      "%XDG_CACHE%/mozilla/firefox/*/startupCache",
+      "%HOME%/.var/app/org.mozilla.firefox/cache/mozilla/firefox/*/cache2",
+      "%HOME%/.var/app/org.mozilla.firefox/cache/mozilla/firefox/*/startupCache",
+      "%HOME%/snap/firefox/common/.cache/mozilla/firefox/*/cache2",
+      "%HOME%/snap/firefox/common/.cache/mozilla/firefox/*/startupCache"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "safe",
+    "admin": false,
+    "closeApps": [
+      "firefox",
+      "firefox-bin",
+      "firefox-esr"
+    ],
+    "verified": false,
+    "source": "https://bugzilla.mozilla.org/show_bug.cgi?id=259356"
+  },
+  {
+    "id": "firefox-forks-cache",
+    "group": "browser",
+    "name": "LibreWolf, Zen and Waterfox cache",
+    "nameTr": "LibreWolf, Zen ve Waterfox önbelleği",
+    "description": "HTTP and startup caches of these Firefox-based browsers; profiles live elsewhere and are not touched, pages load slower once. The browser must be closed.",
+    "descriptionTr": "Firefox tabanlı bu tarayıcıların HTTP ve başlangıç önbellekleri; profiller başka yerdedir ve onlara dokunulmaz, sayfalar bir kez yavaş yüklenir. Tarayıcı kapalı olmalı.",
+    "paths": [
+      "%XDG_CACHE%/librewolf",
+      "%XDG_CACHE%/zen",
+      "%XDG_CACHE%/waterfox"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "safe",
+    "admin": false,
+    "closeApps": [
+      "librewolf",
+      "zen",
+      "zen-bin",
+      "waterfox",
+      "waterfox-bin"
+    ],
+    "verified": false
+  },
+  {
+    "id": "vscode-cache",
+    "group": "apps",
+    "name": "VS Code cache",
+    "nameTr": "VS Code önbelleği",
+    "description": "HTTP, code and GPU caches and finished crash reports of VS Code; settings and data are not touched and the caches are rebuilt on the next start. The app must be closed.",
+    "descriptionTr": "VS Code uygulamasının HTTP, kod ve GPU önbellekleri ile tamamlanmış hata raporları; ayarlara ve verilere dokunulmaz, önbellekler sonraki açılışta yeniden oluşur. Uygulama kapalı olmalı.",
+    "paths": [
+      "%XDG_CONFIG%/Code/Cache",
+      "%XDG_CONFIG%/Code/Code Cache",
+      "%XDG_CONFIG%/Code/GPUCache",
+      "%XDG_CONFIG%/Code/DawnGraphiteCache",
+      "%XDG_CONFIG%/Code/DawnWebGPUCache",
+      "%XDG_CONFIG%/Code/Crashpad/completed"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "safe",
+    "admin": false,
+    "closeApps": [
+      "code"
+    ],
+    "verified": false,
+    "source": "https://www.electronjs.org/docs/latest/api/app#appgetpathname"
+  },
+  {
+    "id": "vscode-insiders-cache",
+    "group": "apps",
+    "name": "VS Code Insiders cache",
+    "nameTr": "VS Code Insiders önbelleği",
+    "description": "HTTP, code and GPU caches and finished crash reports of VS Code Insiders; settings and data are not touched and the caches are rebuilt on the next start. The app must be closed.",
+    "descriptionTr": "VS Code Insiders uygulamasının HTTP, kod ve GPU önbellekleri ile tamamlanmış hata raporları; ayarlara ve verilere dokunulmaz, önbellekler sonraki açılışta yeniden oluşur. Uygulama kapalı olmalı.",
+    "paths": [
+      "%XDG_CONFIG%/Code - Insiders/Cache",
+      "%XDG_CONFIG%/Code - Insiders/Code Cache",
+      "%XDG_CONFIG%/Code - Insiders/GPUCache",
+      "%XDG_CONFIG%/Code - Insiders/DawnGraphiteCache",
+      "%XDG_CONFIG%/Code - Insiders/DawnWebGPUCache",
+      "%XDG_CONFIG%/Code - Insiders/Crashpad/completed"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "safe",
+    "admin": false,
+    "closeApps": [
+      "code-insiders"
+    ],
+    "verified": false,
+    "source": "https://www.electronjs.org/docs/latest/api/app#appgetpathname"
+  },
+  {
+    "id": "vscode-extra-cache",
+    "group": "apps",
+    "name": "VS Code extra caches",
+    "nameTr": "VS Code ek önbellekleri",
+    "description": "Compiled code, downloaded extension packages and logs of VS Code and VSCodium; rebuilt on the next start. The editor must be closed.",
+    "descriptionTr": "VS Code ve VSCodium'un derlenmiş kodu, indirilmiş eklenti paketleri ve günlükleri; bir sonraki açılışta yeniden oluşur. Düzenleyici kapalı olmalı.",
+    "paths": [
+      "%XDG_CONFIG%/Code/CachedData",
+      "%XDG_CONFIG%/Code/CachedExtensionVSIXs",
+      "%XDG_CONFIG%/Code/logs",
+      "%XDG_CONFIG%/Code - Insiders/CachedData",
+      "%XDG_CONFIG%/Code - Insiders/CachedExtensionVSIXs",
+      "%XDG_CONFIG%/Code - Insiders/logs",
+      "%XDG_CONFIG%/VSCodium/CachedData",
+      "%XDG_CONFIG%/VSCodium/CachedExtensionVSIXs",
+      "%XDG_CONFIG%/VSCodium/logs"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "safe",
+    "admin": false,
+    "closeApps": [
+      "code",
+      "code-insiders",
+      "codium"
+    ],
+    "verified": false
+  },
+  {
+    "id": "vscodium-cache",
+    "group": "apps",
+    "name": "VSCodium cache",
+    "nameTr": "VSCodium önbelleği",
+    "description": "HTTP, code and GPU caches and finished crash reports of VSCodium; settings and data are not touched and the caches are rebuilt on the next start. The app must be closed.",
+    "descriptionTr": "VSCodium uygulamasının HTTP, kod ve GPU önbellekleri ile tamamlanmış hata raporları; ayarlara ve verilere dokunulmaz, önbellekler sonraki açılışta yeniden oluşur. Uygulama kapalı olmalı.",
+    "paths": [
+      "%XDG_CONFIG%/VSCodium/Cache",
+      "%XDG_CONFIG%/VSCodium/Code Cache",
+      "%XDG_CONFIG%/VSCodium/GPUCache",
+      "%XDG_CONFIG%/VSCodium/DawnGraphiteCache",
+      "%XDG_CONFIG%/VSCodium/DawnWebGPUCache",
+      "%XDG_CONFIG%/VSCodium/Crashpad/completed"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "safe",
+    "admin": false,
+    "closeApps": [
+      "codium"
+    ],
+    "verified": false,
+    "source": "https://www.electronjs.org/docs/latest/api/app#appgetpathname"
+  },
+  {
+    "id": "cursor-cache",
+    "group": "apps",
+    "name": "Cursor cache",
+    "nameTr": "Cursor önbelleği",
+    "description": "HTTP, code and GPU caches and finished crash reports of Cursor; settings and data are not touched and the caches are rebuilt on the next start. The app must be closed.",
+    "descriptionTr": "Cursor uygulamasının HTTP, kod ve GPU önbellekleri ile tamamlanmış hata raporları; ayarlara ve verilere dokunulmaz, önbellekler sonraki açılışta yeniden oluşur. Uygulama kapalı olmalı.",
+    "paths": [
+      "%XDG_CONFIG%/Cursor/Cache",
+      "%XDG_CONFIG%/Cursor/Code Cache",
+      "%XDG_CONFIG%/Cursor/GPUCache",
+      "%XDG_CONFIG%/Cursor/DawnGraphiteCache",
+      "%XDG_CONFIG%/Cursor/DawnWebGPUCache",
+      "%XDG_CONFIG%/Cursor/Crashpad/completed"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "safe",
+    "admin": false,
+    "closeApps": [
+      "cursor"
+    ],
+    "verified": false,
+    "source": "https://www.electronjs.org/docs/latest/api/app#appgetpathname"
+  },
+  {
+    "id": "windsurf-cache",
+    "group": "apps",
+    "name": "Windsurf cache",
+    "nameTr": "Windsurf önbelleği",
+    "description": "HTTP, code and GPU caches and finished crash reports of Windsurf; settings and data are not touched and the caches are rebuilt on the next start. The app must be closed.",
+    "descriptionTr": "Windsurf uygulamasının HTTP, kod ve GPU önbellekleri ile tamamlanmış hata raporları; ayarlara ve verilere dokunulmaz, önbellekler sonraki açılışta yeniden oluşur. Uygulama kapalı olmalı.",
+    "paths": [
+      "%XDG_CONFIG%/Windsurf/Cache",
+      "%XDG_CONFIG%/Windsurf/Code Cache",
+      "%XDG_CONFIG%/Windsurf/GPUCache",
+      "%XDG_CONFIG%/Windsurf/DawnGraphiteCache",
+      "%XDG_CONFIG%/Windsurf/DawnWebGPUCache",
+      "%XDG_CONFIG%/Windsurf/Crashpad/completed"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "safe",
+    "admin": false,
+    "closeApps": [
+      "windsurf"
+    ],
+    "verified": false,
+    "source": "https://www.electronjs.org/docs/latest/api/app#appgetpathname"
+  },
+  {
+    "id": "discord-cache",
+    "group": "apps",
+    "name": "Discord cache",
+    "nameTr": "Discord önbelleği",
+    "description": "HTTP, code and GPU caches and finished crash reports of Discord; settings and data are not touched and the caches are rebuilt on the next start. The app must be closed.",
+    "descriptionTr": "Discord uygulamasının HTTP, kod ve GPU önbellekleri ile tamamlanmış hata raporları; ayarlara ve verilere dokunulmaz, önbellekler sonraki açılışta yeniden oluşur. Uygulama kapalı olmalı.",
+    "paths": [
+      "%XDG_CONFIG%/discord/Cache",
+      "%XDG_CONFIG%/discord/Code Cache",
+      "%XDG_CONFIG%/discord/GPUCache",
+      "%XDG_CONFIG%/discord/DawnGraphiteCache",
+      "%XDG_CONFIG%/discord/DawnWebGPUCache",
+      "%XDG_CONFIG%/discord/Crashpad/completed",
+      "%XDG_CONFIG%/discordptb/Cache",
+      "%XDG_CONFIG%/discordptb/Code Cache",
+      "%XDG_CONFIG%/discordptb/GPUCache",
+      "%XDG_CONFIG%/discordptb/DawnGraphiteCache",
+      "%XDG_CONFIG%/discordptb/DawnWebGPUCache",
+      "%XDG_CONFIG%/discordptb/Crashpad/completed",
+      "%XDG_CONFIG%/discordcanary/Cache",
+      "%XDG_CONFIG%/discordcanary/Code Cache",
+      "%XDG_CONFIG%/discordcanary/GPUCache",
+      "%XDG_CONFIG%/discordcanary/DawnGraphiteCache",
+      "%XDG_CONFIG%/discordcanary/DawnWebGPUCache",
+      "%XDG_CONFIG%/discordcanary/Crashpad/completed"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "safe",
+    "admin": false,
+    "closeApps": [
+      "discord",
+      "discordptb",
+      "discordcanary"
+    ],
+    "verified": false,
+    "source": "https://www.electronjs.org/docs/latest/api/app#appgetpathname"
+  },
+  {
+    "id": "slack-cache",
+    "group": "apps",
+    "name": "Slack cache",
+    "nameTr": "Slack önbelleği",
+    "description": "HTTP, code and GPU caches and finished crash reports of Slack; settings and data are not touched and the caches are rebuilt on the next start. The app must be closed.",
+    "descriptionTr": "Slack uygulamasının HTTP, kod ve GPU önbellekleri ile tamamlanmış hata raporları; ayarlara ve verilere dokunulmaz, önbellekler sonraki açılışta yeniden oluşur. Uygulama kapalı olmalı.",
+    "paths": [
+      "%XDG_CONFIG%/Slack/Cache",
+      "%XDG_CONFIG%/Slack/Code Cache",
+      "%XDG_CONFIG%/Slack/GPUCache",
+      "%XDG_CONFIG%/Slack/DawnGraphiteCache",
+      "%XDG_CONFIG%/Slack/DawnWebGPUCache",
+      "%XDG_CONFIG%/Slack/Crashpad/completed"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "safe",
+    "admin": false,
+    "closeApps": [
+      "slack"
+    ],
+    "verified": false,
+    "source": "https://www.electronjs.org/docs/latest/api/app#appgetpathname"
+  },
+  {
+    "id": "signal-cache",
+    "group": "apps",
+    "name": "Signal cache",
+    "nameTr": "Signal önbelleği",
+    "description": "HTTP, code and GPU caches and finished crash reports of Signal; settings and data are not touched and the caches are rebuilt on the next start. The app must be closed.",
+    "descriptionTr": "Signal uygulamasının HTTP, kod ve GPU önbellekleri ile tamamlanmış hata raporları; ayarlara ve verilere dokunulmaz, önbellekler sonraki açılışta yeniden oluşur. Uygulama kapalı olmalı.",
+    "paths": [
+      "%XDG_CONFIG%/Signal/Cache",
+      "%XDG_CONFIG%/Signal/Code Cache",
+      "%XDG_CONFIG%/Signal/GPUCache",
+      "%XDG_CONFIG%/Signal/DawnGraphiteCache",
+      "%XDG_CONFIG%/Signal/DawnWebGPUCache",
+      "%XDG_CONFIG%/Signal/Crashpad/completed"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "safe",
+    "admin": false,
+    "closeApps": [
+      "signal-desktop"
+    ],
+    "verified": false,
+    "source": "https://www.electronjs.org/docs/latest/api/app#appgetpathname"
+  },
+  {
+    "id": "element-cache",
+    "group": "apps",
+    "name": "Element cache",
+    "nameTr": "Element önbelleği",
+    "description": "HTTP, code and GPU caches and finished crash reports of Element; settings and data are not touched and the caches are rebuilt on the next start. The app must be closed.",
+    "descriptionTr": "Element uygulamasının HTTP, kod ve GPU önbellekleri ile tamamlanmış hata raporları; ayarlara ve verilere dokunulmaz, önbellekler sonraki açılışta yeniden oluşur. Uygulama kapalı olmalı.",
+    "paths": [
+      "%XDG_CONFIG%/Element/Cache",
+      "%XDG_CONFIG%/Element/Code Cache",
+      "%XDG_CONFIG%/Element/GPUCache",
+      "%XDG_CONFIG%/Element/DawnGraphiteCache",
+      "%XDG_CONFIG%/Element/DawnWebGPUCache",
+      "%XDG_CONFIG%/Element/Crashpad/completed"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "safe",
+    "admin": false,
+    "closeApps": [
+      "element-desktop"
+    ],
+    "verified": false,
+    "source": "https://www.electronjs.org/docs/latest/api/app#appgetpathname"
+  },
+  {
+    "id": "obsidian-cache",
+    "group": "apps",
+    "name": "Obsidian cache",
+    "nameTr": "Obsidian önbelleği",
+    "description": "HTTP, code and GPU caches and finished crash reports of Obsidian; settings and data are not touched and the caches are rebuilt on the next start. The app must be closed.",
+    "descriptionTr": "Obsidian uygulamasının HTTP, kod ve GPU önbellekleri ile tamamlanmış hata raporları; ayarlara ve verilere dokunulmaz, önbellekler sonraki açılışta yeniden oluşur. Uygulama kapalı olmalı.",
+    "paths": [
+      "%XDG_CONFIG%/obsidian/Cache",
+      "%XDG_CONFIG%/obsidian/Code Cache",
+      "%XDG_CONFIG%/obsidian/GPUCache",
+      "%XDG_CONFIG%/obsidian/DawnGraphiteCache",
+      "%XDG_CONFIG%/obsidian/DawnWebGPUCache",
+      "%XDG_CONFIG%/obsidian/Crashpad/completed"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "safe",
+    "admin": false,
+    "closeApps": [
+      "obsidian"
+    ],
+    "verified": false,
+    "source": "https://www.electronjs.org/docs/latest/api/app#appgetpathname"
+  },
+  {
+    "id": "postman-cache",
+    "group": "apps",
+    "name": "Postman cache",
+    "nameTr": "Postman önbelleği",
+    "description": "HTTP, code and GPU caches and finished crash reports of Postman; settings and data are not touched and the caches are rebuilt on the next start. The app must be closed.",
+    "descriptionTr": "Postman uygulamasının HTTP, kod ve GPU önbellekleri ile tamamlanmış hata raporları; ayarlara ve verilere dokunulmaz, önbellekler sonraki açılışta yeniden oluşur. Uygulama kapalı olmalı.",
+    "paths": [
+      "%XDG_CONFIG%/Postman/Cache",
+      "%XDG_CONFIG%/Postman/Code Cache",
+      "%XDG_CONFIG%/Postman/GPUCache",
+      "%XDG_CONFIG%/Postman/DawnGraphiteCache",
+      "%XDG_CONFIG%/Postman/DawnWebGPUCache",
+      "%XDG_CONFIG%/Postman/Crashpad/completed"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "safe",
+    "admin": false,
+    "closeApps": [
+      "postman"
+    ],
+    "verified": false,
+    "source": "https://www.electronjs.org/docs/latest/api/app#appgetpathname"
+  },
+  {
+    "id": "teams-for-linux-cache",
+    "group": "apps",
+    "name": "Teams for Linux cache",
+    "nameTr": "Teams for Linux önbelleği",
+    "description": "HTTP, code and GPU caches and finished crash reports of Teams for Linux; settings and data are not touched and the caches are rebuilt on the next start. The app must be closed.",
+    "descriptionTr": "Teams for Linux uygulamasının HTTP, kod ve GPU önbellekleri ile tamamlanmış hata raporları; ayarlara ve verilere dokunulmaz, önbellekler sonraki açılışta yeniden oluşur. Uygulama kapalı olmalı.",
+    "paths": [
+      "%XDG_CONFIG%/teams-for-linux/Cache",
+      "%XDG_CONFIG%/teams-for-linux/Code Cache",
+      "%XDG_CONFIG%/teams-for-linux/GPUCache",
+      "%XDG_CONFIG%/teams-for-linux/DawnGraphiteCache",
+      "%XDG_CONFIG%/teams-for-linux/DawnWebGPUCache",
+      "%XDG_CONFIG%/teams-for-linux/Crashpad/completed"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "safe",
+    "admin": false,
+    "closeApps": [
+      "teams-for-linux"
+    ],
+    "verified": false,
+    "source": "https://www.electronjs.org/docs/latest/api/app#appgetpathname"
+  },
+  {
+    "id": "claude-desktop-cache",
+    "group": "apps",
+    "name": "Claude Desktop cache",
+    "nameTr": "Claude Desktop önbelleği",
+    "description": "HTTP, code and GPU caches and finished crash reports of Claude Desktop; settings and data are not touched and the caches are rebuilt on the next start. The app must be closed.",
+    "descriptionTr": "Claude Desktop uygulamasının HTTP, kod ve GPU önbellekleri ile tamamlanmış hata raporları; ayarlara ve verilere dokunulmaz, önbellekler sonraki açılışta yeniden oluşur. Uygulama kapalı olmalı.",
+    "paths": [
+      "%XDG_CONFIG%/Claude/Cache",
+      "%XDG_CONFIG%/Claude/Code Cache",
+      "%XDG_CONFIG%/Claude/GPUCache",
+      "%XDG_CONFIG%/Claude/DawnGraphiteCache",
+      "%XDG_CONFIG%/Claude/DawnWebGPUCache",
+      "%XDG_CONFIG%/Claude/Crashpad/completed"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "safe",
+    "admin": false,
+    "closeApps": [
+      "claude-desktop",
+      "claude"
+    ],
+    "verified": false,
+    "source": "https://www.electronjs.org/docs/latest/api/app#appgetpathname"
+  },
+  {
+    "id": "lmstudio-app-cache",
+    "group": "ai",
+    "name": "LM Studio cache",
+    "nameTr": "LM Studio uygulama önbelleği",
+    "description": "HTTP, code and GPU caches and finished crash reports of LM Studio; settings and data are not touched and the caches are rebuilt on the next start. The app must be closed.",
+    "descriptionTr": "LM Studio uygulamasının HTTP, kod ve GPU önbellekleri ile tamamlanmış hata raporları; ayarlara ve verilere dokunulmaz, önbellekler sonraki açılışta yeniden oluşur. Uygulama kapalı olmalı.",
+    "paths": [
+      "%XDG_CONFIG%/LM Studio/Cache",
+      "%XDG_CONFIG%/LM Studio/Code Cache",
+      "%XDG_CONFIG%/LM Studio/GPUCache",
+      "%XDG_CONFIG%/LM Studio/DawnGraphiteCache",
+      "%XDG_CONFIG%/LM Studio/DawnWebGPUCache",
+      "%XDG_CONFIG%/LM Studio/Crashpad/completed"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "safe",
+    "admin": false,
+    "closeApps": [
+      "lm-studio"
+    ],
+    "verified": false,
+    "source": "https://www.electronjs.org/docs/latest/api/app#appgetpathname"
+  },
+  {
+    "id": "heroic-cache",
+    "group": "games",
+    "name": "Heroic cache",
+    "nameTr": "Heroic önbelleği",
+    "description": "HTTP, code and GPU caches and finished crash reports of Heroic; settings and data are not touched and the caches are rebuilt on the next start. The app must be closed.",
+    "descriptionTr": "Heroic uygulamasının HTTP, kod ve GPU önbellekleri ile tamamlanmış hata raporları; ayarlara ve verilere dokunulmaz, önbellekler sonraki açılışta yeniden oluşur. Uygulama kapalı olmalı.",
+    "paths": [
+      "%XDG_CONFIG%/heroic/Cache",
+      "%XDG_CONFIG%/heroic/Code Cache",
+      "%XDG_CONFIG%/heroic/GPUCache",
+      "%XDG_CONFIG%/heroic/DawnGraphiteCache",
+      "%XDG_CONFIG%/heroic/DawnWebGPUCache",
+      "%XDG_CONFIG%/heroic/Crashpad/completed"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "safe",
+    "admin": false,
+    "closeApps": [
+      "heroic"
+    ],
+    "verified": false,
+    "source": "https://www.electronjs.org/docs/latest/api/app#appgetpathname"
+  },
+  {
+    "id": "spotify-cache",
+    "group": "media",
+    "name": "Spotify cache",
+    "nameTr": "Spotify önbelleği",
+    "description": "Streamed music and web content that Spotify keeps; music you marked for offline listening may need to download again. Spotify must be closed.",
+    "descriptionTr": "Spotify'ın tuttuğu akış müziği ve web içeriği; çevrimdışı dinleme için işaretlediğiniz müzikler yeniden indirilebilir. Spotify kapalı olmalı.",
+    "paths": [
+      "%XDG_CACHE%/spotify/Data",
+      "%XDG_CACHE%/spotify/Storage",
+      "%XDG_CACHE%/spotify/Browser",
+      "%HOME%/.var/app/com.spotify.Client/cache/spotify/Data",
+      "%HOME%/.var/app/com.spotify.Client/cache/spotify/Storage",
+      "%HOME%/.var/app/com.spotify.Client/cache/spotify/Browser",
+      "%HOME%/snap/spotify/common/.cache/spotify/Data",
+      "%HOME%/snap/spotify/common/.cache/spotify/Storage",
+      "%HOME%/snap/spotify/common/.cache/spotify/Browser"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "review",
+    "admin": false,
+    "closeApps": [
+      "spotify"
+    ],
+    "verified": false
+  },
+  {
+    "id": "thunderbird-cache",
+    "group": "apps",
+    "name": "Thunderbird cache",
+    "nameTr": "Thunderbird önbelleği",
+    "description": "Web content Thunderbird keeps for each profile; your mail lives in the profile and is not touched. Thunderbird must be closed.",
+    "descriptionTr": "Thunderbird'ün her profil için tuttuğu web içeriği; postalarınız profilde durur ve onlara dokunulmaz. Thunderbird kapalı olmalı.",
+    "paths": [
+      "%XDG_CACHE%/thunderbird/*/cache2"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "safe",
+    "admin": false,
+    "closeApps": [
+      "thunderbird",
+      "thunderbird-bin"
+    ],
+    "verified": false
+  },
+  {
+    "id": "flatpak-app-cache",
+    "group": "apps",
+    "name": "Flatpak app caches",
+    "nameTr": "Flatpak uygulama önbellekleri",
+    "description": "Caches of apps installed as Flatpaks, which they rebuild. Close these apps first; files changed in the last day stay.",
+    "descriptionTr": "Flatpak olarak kurulu uygulamaların önbellekleri, uygulamalar bunları yeniden oluşturur. Önce bu uygulamaları kapatın; son bir günde değişen dosyalar kalır.",
+    "paths": [
+      "%HOME%/.var/app/*/cache"
+    ],
+    "mode": "contents",
+    "exclude": [
+      "BraveSoftware",
+      "chromium",
+      "google-chrome",
+      "huggingface",
+      "lm-studio",
+      "microsoft-edge",
+      "mozilla",
+      "opera",
+      "spotify",
+      "vivaldi"
+    ],
+    "minAgeHours": 24,
+    "risk": "review",
+    "admin": false,
+    "closeApps": [],
+    "verified": false
+  },
+  {
+    "id": "snap-app-cache",
+    "group": "apps",
+    "name": "Snap app caches",
+    "nameTr": "Snap uygulama önbellekleri",
+    "description": "Caches of apps installed as Snaps, which they rebuild. Close these apps first; files changed in the last day stay.",
+    "descriptionTr": "Snap olarak kurulu uygulamaların önbellekleri, uygulamalar bunları yeniden oluşturur. Önce bu uygulamaları kapatın; son bir günde değişen dosyalar kalır.",
+    "paths": [
+      "%HOME%/snap/*/common/.cache"
+    ],
+    "mode": "contents",
+    "exclude": [
+      "BraveSoftware",
+      "chromium",
+      "google-chrome",
+      "huggingface",
+      "lm-studio",
+      "microsoft-edge",
+      "mozilla",
+      "opera",
+      "spotify",
+      "vivaldi"
+    ],
+    "minAgeHours": 24,
+    "risk": "review",
+    "admin": false,
+    "closeApps": [],
+    "verified": false
+  },
+  {
+    "id": "telegram-cache",
+    "group": "apps",
+    "name": "Telegram Desktop cache",
+    "nameTr": "Telegram Desktop önbelleği",
+    "description": "Encrypted media and file cache of every Telegram Desktop account (same as Settings > Advanced > Manage local storage); the session keys in tdata are not touched, media is re-downloaded. Telegram must be closed.",
+    "descriptionTr": "Her Telegram Desktop hesabının şifreli medya ve dosya önbelleği (Ayarlar > Gelişmiş > Yerel depolamayı yönet ile aynı); tdata içindeki oturum anahtarlarına dokunulmaz, medya yeniden indirilir. Telegram kapalı olmalı.",
+    "paths": [
+      "%XDG_DATA%/TelegramDesktop/tdata/user_data*/cache",
+      "%XDG_DATA%/TelegramDesktop/tdata/user_data*/media_cache"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "review",
+    "admin": false,
+    "closeApps": [
+      "telegram-desktop",
+      "telegram"
+    ],
+    "verified": false,
+    "source": "https://github.com/telegramdesktop/tdesktop/blob/dev/Telegram/SourceFiles/storage/storage_account.cpp"
+  },
+  {
+    "id": "zoom-logs",
+    "group": "apps",
+    "name": "Zoom logs",
+    "nameTr": "Zoom günlükleri",
+    "description": "Log files Zoom writes; only diagnostic history is lost. Zoom must be closed.",
+    "descriptionTr": "Zoom'un yazdığı günlük dosyaları; yalnızca tanılama geçmişi kaybolur. Zoom kapalı olmalı.",
+    "paths": [
+      "%HOME%/.zoom/logs",
+      "%HOME%/.var/app/us.zoom.Zoom/.zoom/logs"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "safe",
+    "admin": false,
+    "closeApps": [
+      "zoom"
+    ],
+    "verified": false
+  },
+  {
+    "id": "npm-cache",
+    "group": "dev",
+    "name": "npm cache",
+    "nameTr": "npm önbelleği",
+    "description": "npm's content-addressable package cache; packages are re-downloaded on the next install.",
+    "descriptionTr": "npm'in içerik adresli paket önbelleği; paketler sonraki kurulumda yeniden indirilir.",
+    "paths": [
+      "%HOME%/.npm/_cacache"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "safe",
+    "admin": false,
+    "closeApps": [],
+    "command": "npm cache clean --force",
+    "verified": true,
+    "source": "https://docs.npmjs.com/cli/v11/commands/npm-cache"
+  },
+  {
+    "id": "npx-cache",
+    "group": "dev",
+    "name": "npx cache",
+    "nameTr": "npx önbelleği",
+    "description": "Packages that npx downloaded to run once; they are downloaded again on the next npx call.",
+    "descriptionTr": "npx'in bir kez çalıştırmak için indirdiği paketler; sonraki npx çağrısında yeniden indirilir.",
+    "paths": [
+      "%HOME%/.npm/_npx"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "safe",
+    "admin": false,
+    "closeApps": [],
+    "verified": false
+  },
+  {
+    "id": "pnpm-store",
+    "group": "dev",
+    "name": "pnpm store",
+    "nameTr": "pnpm deposu",
+    "description": "Global content-addressable store of pnpm. Projects keep working through hard links, but the next install downloads packages again; pnpm store prune removes only unreferenced packages.",
+    "descriptionTr": "pnpm'in genel içerik adresli deposu. Projeler sabit bağlantılarla çalışmaya devam eder, ancak sonraki kurulum paketleri yeniden indirir; pnpm store prune yalnızca başvurulmayan paketleri siler.",
+    "paths": [
+      "%XDG_DATA%/pnpm/store"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "review",
+    "admin": false,
+    "closeApps": [],
+    "command": "pnpm store prune",
+    "verified": false
+  },
+  {
+    "id": "pnpm-cache",
+    "group": "dev",
+    "name": "pnpm metadata cache",
+    "nameTr": "pnpm üst veri önbelleği",
+    "description": "Registry metadata cached by pnpm; downloaded again when needed.",
+    "descriptionTr": "pnpm'in önbelleğe aldığı kayıt üst verisi; gerektiğinde yeniden indirilir.",
+    "paths": [
+      "%XDG_CACHE%/pnpm"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "safe",
+    "admin": false,
+    "closeApps": [],
+    "verified": false
+  },
+  {
+    "id": "yarn-classic-cache",
+    "group": "dev",
+    "name": "Yarn classic cache",
+    "nameTr": "Yarn classic önbelleği",
+    "description": "Package cache of Yarn 1; packages are re-downloaded on the next install.",
+    "descriptionTr": "Yarn 1'in paket önbelleği; paketler sonraki kurulumda yeniden indirilir.",
+    "paths": [
+      "%XDG_CACHE%/yarn"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "safe",
+    "admin": false,
+    "closeApps": [],
+    "command": "yarn cache clean",
+    "verified": false,
+    "source": "https://classic.yarnpkg.com/en/docs/cli/cache/"
+  },
+  {
+    "id": "yarn-berry-cache",
+    "group": "dev",
+    "name": "Yarn global cache",
+    "nameTr": "Yarn genel önbelleği",
+    "description": "Global package cache of modern Yarn; packages are re-downloaded on the next install.",
+    "descriptionTr": "Modern Yarn'ın genel paket önbelleği; paketler sonraki kurulumda yeniden indirilir.",
+    "paths": [
+      "%HOME%/.yarn/berry/cache"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "safe",
+    "admin": false,
+    "closeApps": [],
+    "command": "yarn cache clean",
+    "verified": false,
+    "source": "https://yarnpkg.com/configuration/yarnrc"
+  },
+  {
+    "id": "bun-cache",
+    "group": "dev",
+    "name": "Bun cache",
+    "nameTr": "Bun önbelleği",
+    "description": "Global module cache of Bun; packages are re-downloaded on the next install, which can take a while on large projects.",
+    "descriptionTr": "Bun'ın genel modül önbelleği; paketler sonraki kurulumda yeniden indirilir, büyük projelerde bu zaman alabilir.",
+    "paths": [
+      "%HOME%/.bun/install/cache"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "review",
+    "admin": false,
+    "closeApps": [],
+    "command": "bun pm cache rm",
+    "verified": true,
+    "source": "https://bun.sh/docs/install/cache"
+  },
+  {
+    "id": "deno-cache",
+    "group": "dev",
+    "name": "Deno cache",
+    "nameTr": "Deno önbelleği",
+    "description": "Remote modules and compiled code cached by Deno; rebuilt on the next run. Stored data such as localStorage and KV is kept.",
+    "descriptionTr": "Deno'nun önbelleğe aldığı uzak modüller ve derlenmiş kod; sonraki çalıştırmada yeniden oluşur. localStorage ve KV gibi saklanan veriler korunur.",
+    "paths": [
+      "%XDG_CACHE%/deno/deps",
+      "%XDG_CACHE%/deno/remote",
+      "%XDG_CACHE%/deno/gen",
+      "%XDG_CACHE%/deno/npm",
+      "%XDG_CACHE%/deno/registries"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "safe",
+    "admin": false,
+    "closeApps": [],
+    "command": "deno clean",
+    "verified": false,
+    "source": "https://docs.deno.com/runtime/reference/cli/clean/"
+  },
+  {
+    "id": "pip-cache",
+    "group": "dev",
+    "name": "pip cache",
+    "nameTr": "pip önbelleği",
+    "description": "Wheels and HTTP responses cached by pip; downloaded again on the next install.",
+    "descriptionTr": "pip'in önbelleğe aldığı wheel dosyaları ve HTTP yanıtları; sonraki kurulumda yeniden indirilir.",
+    "paths": [
+      "%XDG_CACHE%/pip"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "safe",
+    "admin": false,
+    "closeApps": [],
+    "command": "pip cache purge",
+    "verified": true,
+    "source": "https://pip.pypa.io/en/stable/topics/caching/"
+  },
+  {
+    "id": "uv-cache",
+    "group": "dev",
+    "name": "uv cache",
+    "nameTr": "uv önbelleği",
+    "description": "Package cache of uv; downloaded again on the next install. Environments created by uv keep working unless they link into it.",
+    "descriptionTr": "uv'nin paket önbelleği; sonraki kurulumda yeniden indirilir. uv ile oluşturulan ortamlar, ona bağlı değilse çalışmaya devam eder.",
+    "paths": [
+      "%XDG_CACHE%/uv"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "safe",
+    "admin": false,
+    "closeApps": [],
+    "command": "uv cache clean",
+    "verified": true,
+    "source": "https://docs.astral.sh/uv/concepts/cache/"
+  },
+  {
+    "id": "poetry-cache",
+    "group": "dev",
+    "name": "Poetry cache",
+    "nameTr": "Poetry önbelleği",
+    "description": "Package and artifact caches of Poetry; virtual environments are not touched, packages are downloaded again.",
+    "descriptionTr": "Poetry'nin paket ve yapıt önbellekleri; sanal ortamlara dokunulmaz, paketler yeniden indirilir.",
+    "paths": [
+      "%XDG_CACHE%/pypoetry/cache",
+      "%XDG_CACHE%/pypoetry/artifacts"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "safe",
+    "admin": false,
+    "closeApps": [],
+    "command": "poetry cache clear --all",
+    "verified": true,
+    "source": "https://python-poetry.org/docs/configuration/#cache-dir"
+  },
+  {
+    "id": "pipx-cache",
+    "group": "dev",
+    "name": "pipx cache",
+    "nameTr": "pipx önbelleği",
+    "description": "Temporary environments pipx keeps for pipx run; tools installed with pipx are elsewhere and are not touched.",
+    "descriptionTr": "pipx'in pipx run için tuttuğu geçici ortamlar; pipx ile kurulan araçlar başka yerdedir ve dokunulmaz.",
+    "paths": [
+      "%XDG_CACHE%/pipx"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "safe",
+    "admin": false,
+    "closeApps": [],
+    "verified": false,
+    "source": "https://github.com/pypa/pipx/blob/main/src/pipx/paths.py"
+  },
+  {
+    "id": "conda-pkgs",
+    "group": "dev",
+    "name": "Conda package cache",
+    "nameTr": "Conda paket önbelleği",
+    "description": "Package cache of Conda installs, measured only: environments are linked from it, so cleaning goes through conda clean. Removes unused packages and tarballs.",
+    "descriptionTr": "Conda kurulumlarının paket önbelleği, yalnızca ölçülür: ortamlar buradan bağlandığı için temizlik conda clean ile yapılır. Kullanılmayan paketleri ve arşivleri siler.",
+    "paths": [
+      "%HOME%/miniconda3/pkgs",
+      "%HOME%/anaconda3/pkgs",
+      "%HOME%/miniforge3/pkgs",
+      "%HOME%/.conda/pkgs"
+    ],
+    "mode": "report",
+    "minAgeHours": null,
+    "risk": "review",
+    "admin": false,
+    "closeApps": [],
+    "command": "conda clean --all",
+    "verified": false,
+    "source": "https://docs.conda.io/projects/conda/en/latest/commands/clean.html"
+  },
+  {
+    "id": "cargo-registry",
+    "group": "dev",
+    "name": "Cargo registry cache",
+    "nameTr": "Cargo kayıt önbelleği",
+    "description": "Downloaded crates and their unpacked sources, plus git dependency checkouts; re-created on the next build, which needs a network connection.",
+    "descriptionTr": "İndirilen crate'ler ve açılmış kaynakları ile git bağımlılığı çalışma kopyaları; sonraki derlemede yeniden oluşur, ağ bağlantısı gerekir.",
+    "paths": [
+      "%HOME%/.cargo/registry/cache",
+      "%HOME%/.cargo/registry/src",
+      "%HOME%/.cargo/git/checkouts"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "safe",
+    "admin": false,
+    "closeApps": [
+      "cargo"
+    ],
+    "verified": true,
+    "source": "https://doc.rust-lang.org/cargo/guide/cargo-home.html"
+  },
+  {
+    "id": "cargo-git-db",
+    "group": "dev",
+    "name": "Cargo git database",
+    "nameTr": "Cargo git veritabanı",
+    "description": "Bare clones of git dependencies; the next build clones them again in full, which can be slow.",
+    "descriptionTr": "Git bağımlılıklarının yalın kopyaları; sonraki derleme bunları baştan klonlar, bu yavaş olabilir.",
+    "paths": [
+      "%HOME%/.cargo/git/db"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "review",
+    "admin": false,
+    "closeApps": [
+      "cargo"
+    ],
+    "verified": true,
+    "source": "https://doc.rust-lang.org/cargo/guide/cargo-home.html"
+  },
+  {
+    "id": "rustup-downloads",
+    "group": "dev",
+    "name": "rustup downloads",
+    "nameTr": "rustup indirmeleri",
+    "description": "Toolchain archives rustup downloaded; installed toolchains are not touched, and archives download again when needed.",
+    "descriptionTr": "rustup'ın indirdiği araç zinciri arşivleri; kurulu araç zincirlerine dokunulmaz, arşivler gerektiğinde yeniden indirilir.",
+    "paths": [
+      "%HOME%/.rustup/downloads"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "safe",
+    "admin": false,
+    "closeApps": [
+      "rustup"
+    ],
+    "verified": false
+  },
+  {
+    "id": "go-build-cache",
+    "group": "dev",
+    "name": "Go build cache",
+    "nameTr": "Go derleme önbelleği",
+    "description": "Compiled packages and test results of Go; the next build is slower once.",
+    "descriptionTr": "Go'nun derlenmiş paketleri ve test sonuçları; sonraki derleme bir kez daha yavaş olur.",
+    "paths": [
+      "%XDG_CACHE%/go-build"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "safe",
+    "admin": false,
+    "closeApps": [],
+    "command": "go clean -cache",
+    "verified": true,
+    "source": "https://pkg.go.dev/cmd/go#hdr-Build_and_test_caching"
+  },
+  {
+    "id": "go-mod-cache",
+    "group": "dev",
+    "name": "Go module cache",
+    "nameTr": "Go modül önbelleği",
+    "description": "Downloaded Go modules, measured only: Go makes these folders read-only on purpose, so cleaning goes through go clean. Modules are downloaded again on the next build.",
+    "descriptionTr": "İndirilen Go modülleri, yalnızca ölçülür: Go bu klasörleri bilerek salt okunur yapar, bu yüzden temizlik go clean ile yapılır. Modüller sonraki derlemede yeniden indirilir.",
+    "paths": [
+      "%HOME%/go/pkg/mod"
+    ],
+    "mode": "report",
+    "minAgeHours": null,
+    "risk": "review",
+    "admin": false,
+    "closeApps": [],
+    "command": "go clean -modcache",
+    "verified": true,
+    "source": "https://go.dev/ref/mod#module-cache"
+  },
+  {
+    "id": "gradle-caches",
+    "group": "dev",
+    "name": "Gradle caches",
+    "nameTr": "Gradle önbellekleri",
+    "description": "Dependencies and build outputs cached by Gradle; the next build downloads and rebuilds them, which can take long.",
+    "descriptionTr": "Gradle'ın önbelleğe aldığı bağımlılıklar ve derleme çıktıları; sonraki derleme bunları yeniden indirir ve derler, uzun sürebilir.",
+    "paths": [
+      "%HOME%/.gradle/caches"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "review",
+    "admin": false,
+    "closeApps": [
+      "gradle"
+    ],
+    "verified": true,
+    "source": "https://docs.gradle.org/current/userguide/directory_layout.html"
+  },
+  {
+    "id": "gradle-wrapper-dists",
+    "group": "dev",
+    "name": "Gradle wrapper downloads",
+    "nameTr": "Gradle wrapper indirmeleri",
+    "description": "Gradle versions downloaded by the wrapper; a project's wrapper downloads its version again.",
+    "descriptionTr": "Wrapper'ın indirdiği Gradle sürümleri; projenin wrapper'ı kendi sürümünü yeniden indirir.",
+    "paths": [
+      "%HOME%/.gradle/wrapper/dists"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "safe",
+    "admin": false,
+    "closeApps": [],
+    "verified": true,
+    "source": "https://docs.gradle.org/current/userguide/directory_layout.html"
+  },
+  {
+    "id": "gradle-daemon-logs",
+    "group": "dev",
+    "name": "Gradle daemon logs",
+    "nameTr": "Gradle daemon günlükleri",
+    "description": "Logs and registry files of Gradle daemons; only diagnostic history is lost.",
+    "descriptionTr": "Gradle daemon'larının günlükleri ve kayıt dosyaları; yalnızca tanılama geçmişi kaybolur.",
+    "paths": [
+      "%HOME%/.gradle/daemon"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "safe",
+    "admin": false,
+    "closeApps": [],
+    "verified": true,
+    "source": "https://docs.gradle.org/current/userguide/directory_layout.html"
+  },
+  {
+    "id": "maven-repository",
+    "group": "dev",
+    "name": "Maven local repository",
+    "nameTr": "Maven yerel deposu",
+    "description": "Downloaded Maven artifacts and any jars you installed by hand; those hand-installed jars cannot be downloaded again.",
+    "descriptionTr": "İndirilen Maven yapıtları ve elle kurduğunuz jar dosyaları; elle kurulan jar'lar yeniden indirilemez.",
+    "paths": [
+      "%HOME%/.m2/repository"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "caution",
+    "admin": false,
+    "closeApps": [],
+    "verified": true,
+    "source": "https://maven.apache.org/settings.html"
+  },
+  {
+    "id": "nuget-global-packages",
+    "group": "dev",
+    "name": "NuGet global packages",
+    "nameTr": "NuGet genel paketleri",
+    "description": "Packages restored by NuGet and .NET; the next restore downloads them again.",
+    "descriptionTr": "NuGet ve .NET'in geri yüklediği paketler; sonraki geri yükleme bunları yeniden indirir.",
+    "paths": [
+      "%HOME%/.nuget/packages"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "review",
+    "admin": false,
+    "closeApps": [],
+    "command": "dotnet nuget locals all --clear",
+    "verified": true,
+    "source": "https://learn.microsoft.com/en-us/nuget/consume-packages/managing-the-global-packages-and-cache-folders"
+  },
+  {
+    "id": "nuget-http-cache",
+    "group": "dev",
+    "name": "NuGet HTTP cache",
+    "nameTr": "NuGet HTTP önbelleği",
+    "description": "HTTP responses cached by NuGet; downloaded again when needed.",
+    "descriptionTr": "NuGet'in önbelleğe aldığı HTTP yanıtları; gerektiğinde yeniden indirilir.",
+    "paths": [
+      "%XDG_DATA%/NuGet/v3-cache"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "safe",
+    "admin": false,
+    "closeApps": [],
+    "verified": true,
+    "source": "https://learn.microsoft.com/en-us/nuget/consume-packages/managing-the-global-packages-and-cache-folders"
+  },
+  {
+    "id": "composer-cache",
+    "group": "dev",
+    "name": "Composer cache",
+    "nameTr": "Composer önbelleği",
+    "description": "Package files cached by Composer; downloaded again on the next install.",
+    "descriptionTr": "Composer'ın önbelleğe aldığı paket dosyaları; sonraki kurulumda yeniden indirilir.",
+    "paths": [
+      "%XDG_CACHE%/composer"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "safe",
+    "admin": false,
+    "closeApps": [],
+    "command": "composer clear-cache",
+    "verified": true,
+    "source": "https://getcomposer.org/doc/06-config.md#cache-dir"
+  },
+  {
+    "id": "dart-pub-cache",
+    "group": "dev",
+    "name": "Dart and Flutter pub cache",
+    "nameTr": "Dart ve Flutter pub önbelleği",
+    "description": "Packages downloaded by dart pub and flutter pub, and globally activated tools; projects run pub get again afterwards.",
+    "descriptionTr": "dart pub ve flutter pub ile indirilen paketler ve genel etkinleştirilen araçlar; projelerde sonrasında yeniden pub get çalıştırılır.",
+    "paths": [
+      "%HOME%/.pub-cache"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "review",
+    "admin": false,
+    "closeApps": [],
+    "command": "dart pub cache clean",
+    "verified": true,
+    "source": "https://dart.dev/tools/pub/environment-variables"
+  },
+  {
+    "id": "android-system-images",
+    "group": "dev",
+    "name": "Android system images",
+    "nameTr": "Android sistem görüntüleri",
+    "description": "Emulator system images from the Android SDK; virtual devices that use them stop working until the image is installed again with the SDK Manager.",
+    "descriptionTr": "Android SDK'nın emülatör sistem görüntüleri; bunları kullanan sanal cihazlar, görüntü SDK Manager ile yeniden kurulana kadar çalışmaz.",
+    "paths": [
+      "%HOME%/Android/Sdk/system-images"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "review",
+    "admin": false,
+    "closeApps": [
+      "studio",
+      "emulator",
+      "qemu-system-x86_64"
+    ],
+    "verified": false
+  },
+  {
+    "id": "android-ndk-versions",
+    "group": "dev",
+    "name": "Android NDK versions",
+    "nameTr": "Android NDK sürümleri",
+    "description": "Installed NDK versions; a project that needs one installs it again through the SDK Manager or Gradle.",
+    "descriptionTr": "Kurulu NDK sürümleri; ihtiyaç duyan proje, sürümü SDK Manager veya Gradle ile yeniden kurar.",
+    "paths": [
+      "%HOME%/Android/Sdk/ndk"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "review",
+    "admin": false,
+    "closeApps": [
+      "studio"
+    ],
+    "verified": false
+  },
+  {
+    "id": "android-sdk-temp",
+    "group": "dev",
+    "name": "Android SDK temp files",
+    "nameTr": "Android SDK geçici dosyaları",
+    "description": "Leftovers from SDK Manager downloads; nothing is lost.",
+    "descriptionTr": "SDK Manager indirmelerinden kalanlar; hiçbir şey kaybolmaz.",
+    "paths": [
+      "%HOME%/Android/Sdk/.temp"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "safe",
+    "admin": false,
+    "closeApps": [
+      "studio"
+    ],
+    "verified": false
+  },
+  {
+    "id": "android-avd",
+    "group": "dev",
+    "name": "Android virtual devices",
+    "nameTr": "Android sanal cihazları",
+    "description": "Emulator devices with everything installed and stored on them; this data cannot be restored and the devices must be created again.",
+    "descriptionTr": "Emülatör cihazları ve üzerlerine kurulan ve kaydedilen her şey; bu veriler geri getirilemez, cihazlar yeniden oluşturulmalıdır.",
+    "paths": [
+      "%HOME%/.android/avd"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "caution",
+    "admin": false,
+    "closeApps": [
+      "studio",
+      "emulator",
+      "qemu-system-x86_64"
+    ],
+    "verified": true,
+    "source": "https://developer.android.com/tools/variables"
+  },
+  {
+    "id": "jetbrains-caches",
+    "group": "dev",
+    "name": "JetBrains IDE caches",
+    "nameTr": "JetBrains IDE önbellekleri",
+    "description": "Indexes and caches of JetBrains IDEs, per product and version; settings and plugins are elsewhere. The next start re-indexes projects, which can take a while. The IDE must be closed. Local History, which holds your earlier file versions, is kept.",
+    "descriptionTr": "JetBrains IDE'lerinin ürün ve sürüm başına dizinleri ve önbellekleri; ayarlar ve eklentiler başka yerdedir. Sonraki açılışta projeler yeniden dizinlenir, zaman alabilir. IDE kapalı olmalı. Dosyalarınızın eski sürümlerini tutan Local History korunur.",
+    "paths": [
+      "%XDG_CACHE%/JetBrains/*"
+    ],
+    "mode": "contents",
+    "exclude": [
+      "LocalHistory",
+      "log"
+    ],
+    "minAgeHours": null,
+    "risk": "review",
+    "admin": false,
+    "closeApps": [
+      "idea",
+      "pycharm",
+      "webstorm",
+      "clion",
+      "goland",
+      "rider",
+      "phpstorm",
+      "rubymine",
+      "datagrip",
+      "rustrover"
+    ],
+    "verified": true,
+    "source": "https://www.jetbrains.com/help/idea/directories-used-by-the-ide-to-store-settings-caches-plugins-and-logs.html"
+  },
+  {
+    "id": "jetbrains-logs",
+    "group": "dev",
+    "name": "JetBrains IDE logs",
+    "nameTr": "JetBrains IDE günlükleri",
+    "description": "Log files of JetBrains IDEs; only diagnostic history is lost.",
+    "descriptionTr": "JetBrains IDE'lerinin günlük dosyaları; yalnızca tanılama geçmişi kaybolur.",
+    "paths": [
+      "%XDG_CACHE%/JetBrains/*/log"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "safe",
+    "admin": false,
+    "closeApps": [
+      "idea",
+      "pycharm",
+      "webstorm",
+      "clion",
+      "goland",
+      "rider",
+      "phpstorm",
+      "rubymine",
+      "datagrip",
+      "rustrover"
+    ],
+    "verified": true,
+    "source": "https://www.jetbrains.com/help/idea/directories-used-by-the-ide-to-store-settings-caches-plugins-and-logs.html"
+  },
+  {
+    "id": "android-studio-caches",
+    "group": "dev",
+    "name": "Android Studio caches",
+    "nameTr": "Android Studio önbellekleri",
+    "description": "Indexes and caches of Android Studio; settings are elsewhere. The next start re-indexes projects. Android Studio must be closed. Local History, which holds your earlier file versions, is kept.",
+    "descriptionTr": "Android Studio'nun dizinleri ve önbellekleri; ayarlar başka yerdedir. Sonraki açılışta projeler yeniden dizinlenir. Android Studio kapalı olmalı. Dosyalarınızın eski sürümlerini tutan Local History korunur.",
+    "paths": [
+      "%XDG_CACHE%/Google/AndroidStudio*"
+    ],
+    "mode": "contents",
+    "exclude": [
+      "LocalHistory"
+    ],
+    "minAgeHours": null,
+    "risk": "review",
+    "admin": false,
+    "closeApps": [
+      "studio"
+    ],
+    "verified": false,
+    "source": "https://developer.android.com/studio/intro/studio-config"
+  },
+  {
+    "id": "playwright-browsers",
+    "group": "dev",
+    "name": "Playwright browsers",
+    "nameTr": "Playwright tarayıcıları",
+    "description": "Browser builds downloaded by Playwright; tests need npx playwright install again.",
+    "descriptionTr": "Playwright'ın indirdiği tarayıcı sürümleri; testler için yeniden npx playwright install gerekir.",
+    "paths": [
+      "%XDG_CACHE%/ms-playwright"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "review",
+    "admin": false,
+    "closeApps": [],
+    "verified": true,
+    "source": "https://playwright.dev/docs/browsers"
+  },
+  {
+    "id": "puppeteer-browsers",
+    "group": "dev",
+    "name": "Puppeteer browsers",
+    "nameTr": "Puppeteer tarayıcıları",
+    "description": "Browser builds downloaded by Puppeteer; downloaded again on the next package install.",
+    "descriptionTr": "Puppeteer'ın indirdiği tarayıcı sürümleri; sonraki paket kurulumunda yeniden indirilir.",
+    "paths": [
+      "%XDG_CACHE%/puppeteer"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "review",
+    "admin": false,
+    "closeApps": [],
+    "verified": true,
+    "source": "https://pptr.dev/guides/configuration"
+  },
+  {
+    "id": "cypress-cache",
+    "group": "dev",
+    "name": "Cypress binaries",
+    "nameTr": "Cypress ikili dosyaları",
+    "description": "Cypress app versions downloaded for test runs; downloaded again on the next install.",
+    "descriptionTr": "Test çalıştırmaları için indirilen Cypress sürümleri; sonraki kurulumda yeniden indirilir.",
+    "paths": [
+      "%XDG_CACHE%/Cypress"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "review",
+    "admin": false,
+    "closeApps": [],
+    "command": "cypress cache clear",
+    "verified": true,
+    "source": "https://docs.cypress.io/app/references/advanced-installation"
+  },
+  {
+    "id": "electron-cache",
+    "group": "dev",
+    "name": "Electron downloads",
+    "nameTr": "Electron indirmeleri",
+    "description": "Electron releases downloaded during package installs; downloaded again when needed.",
+    "descriptionTr": "Paket kurulumları sırasında indirilen Electron sürümleri; gerektiğinde yeniden indirilir.",
+    "paths": [
+      "%XDG_CACHE%/electron"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "safe",
+    "admin": false,
+    "closeApps": [],
+    "verified": true,
+    "source": "https://www.electronjs.org/docs/latest/tutorial/installation"
+  },
+  {
+    "id": "electron-builder-cache",
+    "group": "dev",
+    "name": "electron-builder cache",
+    "nameTr": "electron-builder önbelleği",
+    "description": "Tools and runtimes downloaded by electron-builder; downloaded again on the next package build.",
+    "descriptionTr": "electron-builder'ın indirdiği araçlar ve çalışma ortamları; sonraki paket derlemesinde yeniden indirilir.",
+    "paths": [
+      "%XDG_CACHE%/electron-builder"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "safe",
+    "admin": false,
+    "closeApps": [],
+    "verified": false
+  },
+  {
+    "id": "node-gyp-cache",
+    "group": "dev",
+    "name": "node-gyp headers",
+    "nameTr": "node-gyp başlık dosyaları",
+    "description": "Node.js headers downloaded to build native modules; downloaded again on the next native build.",
+    "descriptionTr": "Yerel modülleri derlemek için indirilen Node.js başlık dosyaları; sonraki yerel derlemede yeniden indirilir.",
+    "paths": [
+      "%XDG_CACHE%/node-gyp"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "safe",
+    "admin": false,
+    "closeApps": [],
+    "verified": false
+  },
+  {
+    "id": "ccache",
+    "group": "dev",
+    "name": "ccache",
+    "nameTr": "ccache",
+    "description": "Compiler cache of ccache; the next C or C++ builds are slower until it fills again.",
+    "descriptionTr": "ccache'in derleyici önbelleği; sonraki C veya C++ derlemeleri önbellek dolana kadar daha yavaş olur.",
+    "paths": [
+      "%XDG_CACHE%/ccache"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "safe",
+    "admin": false,
+    "closeApps": [],
+    "command": "ccache -C",
+    "verified": true,
+    "source": "https://ccache.dev/manual/latest.html#config_cache_dir"
+  },
+  {
+    "id": "sccache",
+    "group": "dev",
+    "name": "sccache",
+    "nameTr": "sccache",
+    "description": "Local compiler cache of sccache; the next builds are slower until it fills again.",
+    "descriptionTr": "sccache'in yerel derleyici önbelleği; sonraki derlemeler önbellek dolana kadar daha yavaş olur.",
+    "paths": [
+      "%XDG_CACHE%/sccache"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "safe",
+    "admin": false,
+    "closeApps": [
+      "sccache"
+    ],
+    "verified": true,
+    "source": "https://github.com/mozilla/sccache/blob/main/docs/Local.md"
+  },
+  {
+    "id": "bazel-output",
+    "group": "dev",
+    "name": "Bazel output base",
+    "nameTr": "Bazel çıktı tabanı",
+    "description": "Build outputs of Bazel workspaces, measured only: Bazel keeps parts of it read-only, so cleaning goes through bazel clean, run inside each workspace. The next build starts from nothing.",
+    "descriptionTr": "Bazel çalışma alanlarının derleme çıktıları, yalnızca ölçülür: Bazel bir kısmını salt okunur tutar, bu yüzden temizlik her çalışma alanında çalıştırılan bazel clean ile yapılır. Sonraki derleme sıfırdan başlar.",
+    "paths": [
+      "%XDG_CACHE%/bazel"
+    ],
+    "mode": "report",
+    "minAgeHours": null,
+    "risk": "review",
+    "admin": false,
+    "closeApps": [],
+    "command": "bazel clean --expunge",
+    "verified": true,
+    "source": "https://bazel.build/remote/output-directories"
+  },
+  {
+    "id": "docker-desktop-data",
+    "group": "dev",
+    "name": "Docker Desktop disk",
+    "nameTr": "Docker Desktop diski",
+    "description": "Virtual disk of Docker Desktop with images, containers and volumes, measured only; docker system prune removes unused items and the file shrinks by itself. Deleting the file would lose everything in it.",
+    "descriptionTr": "Docker Desktop'ın imajları, kapsayıcıları ve birimleri tutan sanal diski, yalnızca ölçülür; docker system prune kullanılmayanları siler, dosya kendiliğinden küçülür. Dosyayı silmek içindeki her şeyi kaybettirir.",
+    "paths": [
+      "%HOME%/.docker/desktop/vms/0/data/Docker.raw"
+    ],
+    "mode": "report",
+    "minAgeHours": null,
+    "risk": "review",
+    "admin": false,
+    "closeApps": [],
+    "command": "docker system prune",
+    "verified": true,
+    "source": "https://docs.docker.com/desktop/troubleshoot-and-support/faqs/linuxfaqs/"
+  },
+  {
+    "id": "podman-storage",
+    "group": "dev",
+    "name": "Podman storage",
+    "nameTr": "Podman depolaması",
+    "description": "Images, containers and layers of rootless Podman, measured only: they belong to Podman's user namespace and must not be deleted as files. The size can read high because of shared layers. podman system prune removes unused items.",
+    "descriptionTr": "Rootless Podman'ın imajları, kapsayıcıları ve katmanları, yalnızca ölçülür: Podman'ın kullanıcı ad alanına aittir ve dosya olarak silinmemelidir. Paylaşılan katmanlar yüzünden boyut yüksek görünebilir. podman system prune kullanılmayanları siler.",
+    "paths": [
+      "%XDG_DATA%/containers/storage"
+    ],
+    "mode": "report",
+    "minAgeHours": null,
+    "risk": "review",
+    "admin": false,
+    "closeApps": [],
+    "command": "podman system prune",
+    "verified": true,
+    "source": "https://github.com/containers/storage/blob/main/docs/containers-storage.conf.5.md"
+  },
+  {
+    "id": "vagrant-boxes",
+    "group": "dev",
+    "name": "Vagrant boxes",
+    "nameTr": "Vagrant kutuları",
+    "description": "Base images downloaded by Vagrant, measured only; vagrant box prune removes old versions and keeps the newest.",
+    "descriptionTr": "Vagrant'ın indirdiği temel imajlar, yalnızca ölçülür; vagrant box prune eski sürümleri siler, en yenisini tutar.",
+    "paths": [
+      "%HOME%/.vagrant.d/boxes"
+    ],
+    "mode": "report",
+    "minAgeHours": null,
+    "risk": "review",
+    "admin": false,
+    "closeApps": [],
+    "command": "vagrant box prune",
+    "verified": false,
+    "source": "https://developer.hashicorp.com/vagrant/docs/cli/box"
+  },
+  {
+    "id": "vagrant-temp",
+    "group": "dev",
+    "name": "Vagrant temp files",
+    "nameTr": "Vagrant geçici dosyaları",
+    "description": "Temporary files left by Vagrant downloads and packaging; files used in the last day are kept.",
+    "descriptionTr": "Vagrant indirme ve paketleme işlemlerinden kalan geçici dosyalar; son bir günde kullanılanlar korunur.",
+    "paths": [
+      "%HOME%/.vagrant.d/tmp"
+    ],
+    "mode": "contents",
+    "minAgeHours": 24,
+    "risk": "review",
+    "admin": false,
+    "closeApps": [
+      "vagrant"
+    ],
+    "verified": false,
+    "source": "https://developer.hashicorp.com/vagrant/docs/other/environmental-variables"
+  },
+  {
+    "id": "huggingface-hub",
+    "group": "ai",
+    "name": "Hugging Face hub cache",
+    "nameTr": "Hugging Face hub önbelleği",
+    "description": "Models, datasets and spaces downloaded through huggingface_hub; re-downloaded on next use. The login token in the parent folder is not touched.",
+    "descriptionTr": "huggingface_hub ile indirilen modeller, veri setleri ve space'ler; sonraki kullanımda yeniden indirilir. Üst klasördeki oturum anahtarına dokunulmaz.",
+    "paths": [
+      "%XDG_CACHE%/huggingface/hub"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "review",
+    "admin": false,
+    "closeApps": [],
+    "verified": true,
+    "source": "https://huggingface.co/docs/huggingface_hub/package_reference/environment_variables"
+  },
+  {
+    "id": "huggingface-xet",
+    "group": "ai",
+    "name": "Hugging Face Xet cache",
+    "nameTr": "Hugging Face Xet önbelleği",
+    "description": "Chunk cache used to speed up Hugging Face downloads; rebuilt as files are downloaded.",
+    "descriptionTr": "Hugging Face indirmelerini hızlandıran parça önbelleği; dosyalar indikçe yeniden oluşur.",
+    "paths": [
+      "%XDG_CACHE%/huggingface/xet"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "safe",
+    "admin": false,
+    "closeApps": [],
+    "verified": true,
+    "source": "https://huggingface.co/docs/huggingface_hub/package_reference/environment_variables"
+  },
+  {
+    "id": "huggingface-assets",
+    "group": "ai",
+    "name": "Hugging Face assets",
+    "nameTr": "Hugging Face varlıkları",
+    "description": "Files that libraries built on huggingface_hub store for later; a library downloads or builds them again when it needs them.",
+    "descriptionTr": "huggingface_hub üzerine kurulu kitaplıkların sonrası için sakladığı dosyalar; kitaplık gerektiğinde bunları yeniden indirir veya oluşturur.",
+    "paths": [
+      "%XDG_CACHE%/huggingface/assets"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "review",
+    "admin": false,
+    "closeApps": [],
+    "verified": true,
+    "source": "https://huggingface.co/docs/huggingface_hub/package_reference/environment_variables"
+  },
+  {
+    "id": "huggingface-datasets",
+    "group": "ai",
+    "name": "Hugging Face datasets cache",
+    "nameTr": "Hugging Face veri seti önbelleği",
+    "description": "Datasets prepared by the datasets library; downloaded and processed again on next use, which can be slow.",
+    "descriptionTr": "datasets kitaplığının hazırladığı veri setleri; sonraki kullanımda yeniden indirilip işlenir, yavaş olabilir.",
+    "paths": [
+      "%XDG_CACHE%/huggingface/datasets"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "review",
+    "admin": false,
+    "closeApps": [],
+    "verified": true,
+    "source": "https://huggingface.co/docs/datasets/cache"
+  },
+  {
+    "id": "ollama-models",
+    "group": "ai",
+    "name": "Ollama models",
+    "nameTr": "Ollama modelleri",
+    "description": "Models of an Ollama install that runs as your user; all models are removed and must be pulled again. Use ollama rm with a model name to remove just one.",
+    "descriptionTr": "Kullanıcınız olarak çalışan Ollama kurulumunun modelleri; tüm modeller silinir ve yeniden çekilmelidir. Yalnızca birini silmek için model adıyla ollama rm kullanın.",
+    "paths": [
+      "%HOME%/.ollama/models"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "review",
+    "admin": false,
+    "closeApps": [
+      "ollama"
+    ],
+    "verified": false,
+    "source": "https://docs.ollama.com/faq"
+  },
+  {
+    "id": "ollama-service-models",
+    "group": "ai",
+    "name": "Ollama service models",
+    "nameTr": "Ollama hizmeti modelleri",
+    "description": "Models of the Ollama systemd service, in /usr/share/ollama and owned by the ollama user, so they are not measured or deleted here. List them with this command and remove one with ollama rm and its name.",
+    "descriptionTr": "Ollama systemd hizmetinin modelleri; /usr/share/ollama içindedir ve ollama kullanıcısına aittir, bu yüzden burada ölçülmez ve silinmez. Bu komutla listeleyin, birini adıyla ollama rm kullanarak silin.",
+    "paths": [],
+    "mode": "report",
+    "minAgeHours": null,
+    "risk": "review",
+    "admin": false,
+    "closeApps": [],
+    "command": "ollama list",
+    "verified": true,
+    "source": "https://docs.ollama.com/faq"
+  },
+  {
+    "id": "lmstudio-models",
+    "group": "ai",
+    "name": "LM Studio models",
+    "nameTr": "LM Studio modelleri",
+    "description": "Models downloaded or imported into LM Studio; imported models you have no other copy of cannot be downloaded again. LM Studio must be closed.",
+    "descriptionTr": "LM Studio'ya indirilen veya aktarılan modeller; başka kopyası olmayan aktarılmış modeller yeniden indirilemez. LM Studio kapalı olmalı.",
+    "paths": [
+      "%HOME%/.lmstudio/models"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "review",
+    "admin": false,
+    "closeApps": [
+      "lm-studio"
+    ],
+    "verified": true,
+    "source": "https://lmstudio.ai/docs/app/advanced/import-model"
+  },
+  {
+    "id": "lmstudio-legacy-models",
+    "group": "ai",
+    "name": "LM Studio models (old folder)",
+    "nameTr": "LM Studio modelleri (eski klasör)",
+    "description": "Models from the folder older LM Studio versions used; check that newer versions no longer point at it before cleaning. LM Studio must be closed.",
+    "descriptionTr": "Eski LM Studio sürümlerinin kullandığı klasördeki modeller; temizlemeden önce yeni sürümün bu klasörü kullanmadığını kontrol edin. LM Studio kapalı olmalı.",
+    "paths": [
+      "%XDG_CACHE%/lm-studio"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "review",
+    "admin": false,
+    "closeApps": [
+      "lm-studio"
+    ],
+    "verified": false
+  },
+  {
+    "id": "torch-hub-cache",
+    "group": "ai",
+    "name": "PyTorch hub cache",
+    "nameTr": "PyTorch hub önbelleği",
+    "description": "Models and repositories downloaded by torch.hub; downloaded again on next use.",
+    "descriptionTr": "torch.hub ile indirilen modeller ve depolar; sonraki kullanımda yeniden indirilir.",
+    "paths": [
+      "%XDG_CACHE%/torch/hub"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "review",
+    "admin": false,
+    "closeApps": [],
+    "verified": true,
+    "source": "https://github.com/pytorch/pytorch/blob/main/torch/hub.py"
+  },
+  {
+    "id": "whisper-models",
+    "group": "ai",
+    "name": "Whisper models",
+    "nameTr": "Whisper modelleri",
+    "description": "Speech models downloaded by OpenAI Whisper; downloaded again on next use.",
+    "descriptionTr": "OpenAI Whisper'ın indirdiği konuşma modelleri; sonraki kullanımda yeniden indirilir.",
+    "paths": [
+      "%XDG_CACHE%/whisper"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "review",
+    "admin": false,
+    "closeApps": [],
+    "verified": true,
+    "source": "https://github.com/openai/whisper/blob/main/whisper/__init__.py"
+  },
+  {
+    "id": "thumbnails",
+    "group": "system",
+    "name": "Thumbnails",
+    "nameTr": "Küçük resimler",
+    "description": "Thumbnails of images and videos saved by file managers; rebuilt when you open the folder.",
+    "descriptionTr": "Dosya yöneticilerinin kaydettiği görüntü ve video küçük resimleri; klasörü açtığınızda yeniden oluşur.",
+    "paths": [
+      "%XDG_CACHE%/thumbnails/normal",
+      "%XDG_CACHE%/thumbnails/large",
+      "%XDG_CACHE%/thumbnails/x-large",
+      "%XDG_CACHE%/thumbnails/xx-large",
+      "%XDG_CACHE%/thumbnails/fail"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "safe",
+    "admin": false,
+    "closeApps": [],
+    "verified": true,
+    "source": "https://specifications.freedesktop.org/thumbnail/latest/directory.html"
+  },
+  {
+    "id": "thumbnails-legacy",
+    "group": "system",
+    "name": "Old thumbnails folder",
+    "nameTr": "Eski küçük resim klasörü",
+    "description": "Thumbnails from the older location that current desktops no longer use; nothing is lost.",
+    "descriptionTr": "Güncel masaüstlerinin artık kullanmadığı eski konumdaki küçük resimler; hiçbir şey kaybolmaz.",
+    "paths": [
+      "%HOME%/.thumbnails"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "safe",
+    "admin": false,
+    "closeApps": [],
+    "verified": false
+  },
+  {
+    "id": "recycle-bin",
+    "group": "system",
+    "name": "Trash",
+    "nameTr": "Çöp Kutusu",
+    "description": "Files you moved to the trash; emptied the way the trash specification describes, after which they cannot be restored.",
+    "descriptionTr": "Çöp kutusuna taşıdığınız dosyalar; çöp kutusu belirtiminin tarif ettiği şekilde boşaltılır, sonrasında geri yüklenemez.",
+    "paths": [],
+    "mode": "report",
+    "minAgeHours": null,
+    "risk": "review",
+    "admin": false,
+    "closeApps": [],
+    "command": "api:SHEmptyRecycleBin",
+    "verified": true,
+    "source": "https://specifications.freedesktop.org/trash/latest/"
+  },
+  {
+    "id": "mesa-shader-cache",
+    "group": "system",
+    "name": "Mesa shader cache",
+    "nameTr": "Mesa gölgelendirici önbelleği",
+    "description": "Compiled shaders of the Mesa graphics drivers; rebuilt as apps and games run, with some stutter at first. A running desktop uses it too, so cleaning it can disturb the session.",
+    "descriptionTr": "Mesa grafik sürücülerinin derlenmiş gölgelendiricileri; uygulamalar ve oyunlar çalıştıkça yeniden oluşur, başta biraz takılma olabilir. Çalışan masaüstü de bunu kullanır, bu yüzden temizlemek oturumu bozabilir.",
+    "paths": [
+      "%XDG_CACHE%/mesa_shader_cache*"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "review",
+    "admin": false,
+    "closeApps": [],
+    "verified": true,
+    "source": "https://docs.mesa3d.org/envvars.html"
+  },
+  {
+    "id": "nvidia-shader-cache",
+    "group": "system",
+    "name": "NVIDIA shader cache",
+    "nameTr": "NVIDIA gölgelendirici önbelleği",
+    "description": "Compiled shaders of the NVIDIA driver; rebuilt as apps and games run, with some stutter at first.",
+    "descriptionTr": "NVIDIA sürücüsünün derlenmiş gölgelendiricileri; uygulamalar ve oyunlar çalıştıkça yeniden oluşur, başta biraz takılma olabilir.",
+    "paths": [
+      "%XDG_CACHE%/nvidia/GLCache",
+      "%HOME%/.nv/GLCache"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "review",
+    "admin": false,
+    "closeApps": [],
+    "verified": true,
+    "source": "https://download.nvidia.com/XFree86/Linux-x86_64/570.86.16/README/openglenvvariables.html"
+  },
+  {
+    "id": "amd-shader-cache",
+    "group": "system",
+    "name": "AMD Vulkan shader cache",
+    "nameTr": "AMD Vulkan gölgelendirici önbelleği",
+    "description": "Compiled shaders of the AMDVLK driver; rebuilt as apps and games run, with some stutter at first.",
+    "descriptionTr": "AMDVLK sürücüsünün derlenmiş gölgelendiricileri; uygulamalar ve oyunlar çalıştıkça yeniden oluşur, başta biraz takılma olabilir.",
+    "paths": [
+      "%XDG_CACHE%/AMD/VkCache"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "review",
+    "admin": false,
+    "closeApps": [],
+    "verified": false
+  },
+  {
+    "id": "gnome-search-index",
+    "group": "system",
+    "name": "GNOME search index",
+    "nameTr": "GNOME arama dizini",
+    "description": "File index of GNOME LocalSearch, measured only because the service keeps it open. After a reset the whole home folder is indexed again, which uses CPU for a while.",
+    "descriptionTr": "GNOME LocalSearch'ün dosya dizini, hizmet açık tuttuğu için yalnızca ölçülür. Sıfırlamadan sonra tüm ev klasörü yeniden dizinlenir, bir süre işlemci kullanır.",
+    "paths": [
+      "%XDG_CACHE%/tracker3/files"
+    ],
+    "mode": "report",
+    "minAgeHours": null,
+    "risk": "review",
+    "admin": false,
+    "closeApps": [],
+    "command": "localsearch reset",
+    "verified": false
+  },
+  {
+    "id": "kde-baloo-index",
+    "group": "system",
+    "name": "KDE Baloo index",
+    "nameTr": "KDE Baloo dizini",
+    "description": "File index of KDE Baloo, measured only because the service keeps it open. After a purge the home folder is indexed again, which uses CPU for a while.",
+    "descriptionTr": "KDE Baloo'nun dosya dizini, hizmet açık tuttuğu için yalnızca ölçülür. Temizlikten sonra ev klasörü yeniden dizinlenir, bir süre işlemci kullanır.",
+    "paths": [
+      "%XDG_DATA%/baloo/index"
+    ],
+    "mode": "report",
+    "minAgeHours": null,
+    "risk": "review",
+    "admin": false,
+    "closeApps": [],
+    "command": "balooctl6 purge",
+    "verified": false
+  },
+  {
+    "id": "fontconfig-cache",
+    "group": "system",
+    "name": "Fontconfig cache",
+    "nameTr": "Fontconfig önbelleği",
+    "description": "Font information cached per user; apps rebuild it at their next start, or run fc-cache to rebuild it now.",
+    "descriptionTr": "Kullanıcı başına önbelleğe alınan yazı tipi bilgileri; uygulamalar sonraki açılışta yeniden oluşturur, hemen oluşturmak için fc-cache çalıştırın.",
+    "paths": [
+      "%XDG_CACHE%/fontconfig"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "safe",
+    "admin": false,
+    "closeApps": [],
+    "command": "fc-cache -f",
+    "verified": true,
+    "source": "https://www.freedesktop.org/software/fontconfig/fontconfig-user.html"
+  },
+  {
+    "id": "xsession-errors",
+    "group": "system",
+    "name": "X session log",
+    "nameTr": "X oturum günlüğü",
+    "description": "Error log of the X session, measured only: the running session keeps writing to the file, so it is emptied with this command rather than deleted.",
+    "descriptionTr": "X oturumunun hata günlüğü, yalnızca ölçülür: çalışan oturum dosyaya yazmaya devam eder, bu yüzden silinmez, bu komutla boşaltılır.",
+    "paths": [
+      "%HOME%/.xsession-errors"
+    ],
+    "mode": "report",
+    "minAgeHours": null,
+    "risk": "safe",
+    "admin": false,
+    "closeApps": [],
+    "command": "truncate -s 0 ~/.xsession-errors",
+    "verified": false
+  },
+  {
+    "id": "steam-shadercache",
+    "group": "games",
+    "name": "Steam shader pre-cache",
+    "nameTr": "Steam gölgelendirici ön önbelleği",
+    "description": "Per-game shader caches downloaded or built by Steam's shader pre-caching, in every Steam library in your home folder; rebuilt per game, expect stutter or a shader download on next launch. The Games page lists them per game.",
+    "descriptionTr": "Steam'in gölgelendirici ön önbelleklemesiyle indirilen veya derlenen oyun başına önbellekler, ev klasörünüzdeki her Steam kütüphanesinde; oyun başına yeniden oluşur, sonraki açılışta takılma veya indirme olabilir. Oyunlar sayfası bunları oyun oyun listeler.",
+    "paths": [
+      "%STEAMLIBRARY%/steamapps/shadercache"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "review",
+    "admin": false,
+    "closeApps": [
+      "fossilize_replay",
+      "steam"
+    ],
+    "verified": false
+  },
+  {
+    "id": "steam-htmlcache",
+    "group": "games",
+    "name": "Steam browser cache",
+    "nameTr": "Steam tarayıcı önbelleği",
+    "description": "Cache of Steam's built-in browser (store, library pages, overlay); rebuilt on the next start. Steam must be closed.",
+    "descriptionTr": "Steam'in yerleşik tarayıcısının önbelleği (mağaza, kütüphane sayfaları, arayüz); sonraki açılışta yeniden oluşur. Steam kapalı olmalı.",
+    "paths": [
+      "%STEAM%/config/htmlcache/Cache",
+      "%STEAM%/config/htmlcache/Default/Cache",
+      "%STEAM%/config/htmlcache/Code Cache",
+      "%STEAM%/config/htmlcache/Default/Code Cache",
+      "%STEAM%/config/htmlcache/GPUCache",
+      "%STEAM%/config/htmlcache/Default/GPUCache"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "safe",
+    "admin": false,
+    "closeApps": [
+      "steam",
+      "steamwebhelper"
+    ],
+    "verified": false
+  },
+  {
+    "id": "steam-logs-dumps",
+    "group": "games",
+    "name": "Steam logs and dumps",
+    "nameTr": "Steam günlükleri ve dökümleri",
+    "description": "Steam client logs, crash dumps and the HTTP cache; only diagnostic history is lost. Steam must be closed.",
+    "descriptionTr": "Steam istemcisi günlükleri, hata dökümleri ve HTTP önbelleği; yalnızca tanılama geçmişi kaybolur. Steam kapalı olmalı.",
+    "paths": [
+      "%STEAM%/logs",
+      "%STEAM%/dumps",
+      "%STEAM%/appcache/httpcache"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "safe",
+    "admin": false,
+    "closeApps": [
+      "steam"
+    ],
+    "verified": false
+  },
+  {
+    "id": "steam-download-leftovers",
+    "group": "games",
+    "name": "Steam download leftovers",
+    "nameTr": "Steam indirme kalıntıları",
+    "description": "Temporary update files and leftover Workshop downloads in every Steam library in your home folder; Steam fetches what it still needs. Steam must be closed.",
+    "descriptionTr": "Ev klasörünüzdeki her Steam kütüphanesinde geçici güncelleme dosyaları ve kalan Workshop indirmeleri; Steam hâlâ gerekenleri indirir. Steam kapalı olmalı.",
+    "paths": [
+      "%STEAMLIBRARY%/steamapps/temp",
+      "%STEAMLIBRARY%/steamapps/workshop/downloads",
+      "%STEAMLIBRARY%/steamapps/workshop/temp"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "safe",
+    "admin": false,
+    "closeApps": [
+      "steam",
+      "steamwebhelper"
+    ],
+    "verified": false
+  },
+  {
+    "id": "steam-partial-downloads",
+    "group": "games",
+    "name": "Steam partial downloads",
+    "nameTr": "Steam yarım indirmeleri",
+    "description": "Game downloads and updates that have not finished; paused downloads start again from the beginning. Steam must be closed.",
+    "descriptionTr": "Bitmemiş oyun indirmeleri ve güncellemeleri; duraklatılan indirmeler baştan başlar. Steam kapalı olmalı.",
+    "paths": [
+      "%STEAMLIBRARY%/steamapps/downloading"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "review",
+    "admin": false,
+    "closeApps": [
+      "steam",
+      "steamwebhelper"
+    ],
+    "verified": false
+  },
+  {
+    "id": "steam-redownloadable-caches",
+    "group": "games",
+    "name": "Steam re-downloadable caches",
+    "nameTr": "Steam yeniden indirilebilir önbellekleri",
+    "description": "Steam client packages, depot cache and library artwork; Steam downloads them again on the next start, which takes a moment. Steam must be closed.",
+    "descriptionTr": "Steam istemci paketleri, depo önbelleği ve kütüphane görselleri; Steam sonraki açılışta yeniden indirir, biraz sürer. Steam kapalı olmalı.",
+    "paths": [
+      "%STEAM%/package",
+      "%STEAM%/depotcache",
+      "%STEAM%/appcache/librarycache"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "review",
+    "admin": false,
+    "closeApps": [
+      "steam",
+      "steamwebhelper"
+    ],
+    "verified": false
+  },
+  {
+    "id": "proton-prefixes",
+    "group": "games",
+    "name": "Proton prefixes",
+    "nameTr": "Proton önekleri",
+    "description": "Windows environments of Proton games, measured only: they hold save games that may not be in Steam Cloud. Never deleted here; uninstall the game in Steam or remove a prefix yourself after backing up its saves.",
+    "descriptionTr": "Proton oyunlarının Windows ortamları, yalnızca ölçülür: Steam Cloud'da olmayabilecek kayıtlı oyunları tutar. Burada asla silinmez; oyunu Steam'den kaldırın veya kayıtları yedekledikten sonra öneki kendiniz silin.",
+    "paths": [
+      "%STEAMLIBRARY%/steamapps/compatdata/*/pfx"
+    ],
+    "mode": "report",
+    "minAgeHours": null,
+    "risk": "caution",
+    "admin": false,
+    "closeApps": [],
+    "verified": true,
+    "source": "https://github.com/ValveSoftware/Proton/wiki/Proton-FAQ"
+  },
+  {
+    "id": "wine-prefix",
+    "group": "games",
+    "name": "Wine prefix",
+    "nameTr": "Wine öneki",
+    "description": "The default Wine environment with its installed Windows programs and their saves, measured only. Never deleted here.",
+    "descriptionTr": "Kurulu Windows programları ve kayıtlarıyla varsayılan Wine ortamı, yalnızca ölçülür. Burada asla silinmez.",
+    "paths": [
+      "%HOME%/.wine"
+    ],
+    "mode": "report",
+    "minAgeHours": null,
+    "risk": "caution",
+    "admin": false,
+    "closeApps": [],
+    "verified": false,
+    "source": "https://gitlab.winehq.org/wine/wine/-/wikis/FAQ"
+  },
+  {
+    "id": "lutris-prefixes",
+    "group": "games",
+    "name": "Lutris prefixes",
+    "nameTr": "Lutris önekleri",
+    "description": "Windows environments of games in the default Lutris folder, measured only: they hold installed games and saves. Never deleted here; remove a game from Lutris instead.",
+    "descriptionTr": "Varsayılan Lutris klasöründeki oyunların Windows ortamları, yalnızca ölçülür: kurulu oyunları ve kayıtları tutar. Burada asla silinmez; oyunu Lutris'ten kaldırın.",
+    "paths": [
+      "%HOME%/Games/*/drive_c"
+    ],
+    "mode": "report",
+    "minAgeHours": null,
+    "risk": "caution",
+    "admin": false,
+    "closeApps": [],
+    "verified": false,
+    "source": "https://github.com/lutris/lutris"
+  },
+  {
+    "id": "heroic-prefixes",
+    "group": "games",
+    "name": "Heroic prefixes",
+    "nameTr": "Heroic önekleri",
+    "description": "Windows environments of Heroic games, measured only: they hold saves that may not be in the cloud. Never deleted here; remove a game from Heroic instead.",
+    "descriptionTr": "Heroic oyunlarının Windows ortamları, yalnızca ölçülür: bulutta olmayabilecek kayıtları tutar. Burada asla silinmez; oyunu Heroic'ten kaldırın.",
+    "paths": [
+      "%HOME%/Games/Heroic/Prefixes"
+    ],
+    "mode": "report",
+    "minAgeHours": null,
+    "risk": "caution",
+    "admin": false,
+    "closeApps": [],
+    "verified": false,
+    "source": "https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher/blob/main/src/backend/constants/paths.ts"
+  },
+  {
+    "id": "lutris-cache",
+    "group": "games",
+    "name": "Lutris cache",
+    "nameTr": "Lutris önbelleği",
+    "description": "Installer downloads, shader files and temporary files of Lutris; downloaded again when you next install a game. Installed games are not touched. Lutris must be closed.",
+    "descriptionTr": "Lutris'in yükleyici indirmeleri, gölgelendirici dosyaları ve geçici dosyaları; sonraki oyun kurulumunda yeniden indirilir. Kurulu oyunlara dokunulmaz. Lutris kapalı olmalı.",
+    "paths": [
+      "%XDG_CACHE%/lutris/installer",
+      "%XDG_CACHE%/lutris/shaders",
+      "%XDG_CACHE%/lutris/tmp"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "safe",
+    "admin": false,
+    "closeApps": [
+      "lutris"
+    ],
+    "verified": true,
+    "source": "https://github.com/lutris/lutris/blob/master/lutris/settings.py"
+  },
+  {
+    "id": "wine-installers-cache",
+    "group": "games",
+    "name": "Wine installer cache",
+    "nameTr": "Wine yükleyici önbelleği",
+    "description": "Gecko and Mono installers that Wine downloaded; Wine downloads them again when a new prefix needs them.",
+    "descriptionTr": "Wine'ın indirdiği Gecko ve Mono yükleyicileri; yeni bir önek gerektirdiğinde Wine bunları yeniden indirir.",
+    "paths": [
+      "%XDG_CACHE%/wine"
+    ],
+    "mode": "files",
+    "include": [
+      "*.msi"
+    ],
+    "minAgeHours": null,
+    "risk": "safe",
+    "admin": false,
+    "closeApps": [],
+    "verified": false
+  },
+  {
+    "id": "apt-cache",
+    "group": "system",
+    "name": "APT package cache",
+    "nameTr": "APT paket önbelleği",
+    "description": "Downloaded .deb files in /var/cache/apt/archives. The app does not touch this folder; run the command as root. Packages are downloaded again when needed.",
+    "descriptionTr": "/var/cache/apt/archives içindeki indirilmiş .deb dosyaları. Uygulama bu klasöre dokunmaz; komutu root olarak çalıştırın. Paketler gerektiğinde yeniden indirilir.",
+    "paths": [],
+    "mode": "report",
+    "minAgeHours": null,
+    "risk": "safe",
+    "admin": false,
+    "closeApps": [],
+    "command": "apt-get clean",
+    "verified": true,
+    "source": "https://manpages.ubuntu.com/manpages/noble/man8/apt-get.8.html"
+  },
+  {
+    "id": "apt-autoremove",
+    "group": "system",
+    "name": "APT unused packages",
+    "nameTr": "APT kullanılmayan paketleri",
+    "description": "Packages installed as dependencies that nothing needs now. Run the command as root and read its list first: it can include packages you wanted, and apt-get -s autoremove shows the list without removing anything.",
+    "descriptionTr": "Bağımlılık olarak kurulan ve artık gerekmeyen paketler. Komutu root olarak çalıştırın ve önce listeyi okuyun: istediğiniz paketler de olabilir; apt-get -s autoremove hiçbir şey silmeden listeyi gösterir.",
+    "paths": [],
+    "mode": "report",
+    "minAgeHours": null,
+    "risk": "caution",
+    "admin": false,
+    "closeApps": [],
+    "command": "apt-get autoremove",
+    "verified": true,
+    "source": "https://manpages.ubuntu.com/manpages/noble/man8/apt-get.8.html"
+  },
+  {
+    "id": "dnf-cache",
+    "group": "system",
+    "name": "DNF cache",
+    "nameTr": "DNF önbelleği",
+    "description": "Repository metadata and any kept packages in /var/cache/libdnf5 (/var/cache/dnf on DNF 4). The app does not touch this folder; run the command as root. Metadata is downloaded again on the next DNF call.",
+    "descriptionTr": "/var/cache/libdnf5 (DNF 4'te /var/cache/dnf) içindeki depo üst verisi ve saklanan paketler. Uygulama bu klasöre dokunmaz; komutu root olarak çalıştırın. Üst veri sonraki DNF çağrısında yeniden indirilir.",
+    "paths": [],
+    "mode": "report",
+    "minAgeHours": null,
+    "risk": "safe",
+    "admin": false,
+    "closeApps": [],
+    "command": "dnf clean all",
+    "verified": true,
+    "source": "https://dnf5.readthedocs.io/en/latest/commands/clean.8.html"
+  },
+  {
+    "id": "pacman-cache",
+    "group": "system",
+    "name": "pacman package cache",
+    "nameTr": "pacman paket önbelleği",
+    "description": "Every package version pacman downloaded, in /var/cache/pacman/pkg. Old versions are what you need to downgrade on Arch, so the command keeps the newest three. It comes with pacman-contrib; run it as root.",
+    "descriptionTr": "pacman'in indirdiği her paket sürümü, /var/cache/pacman/pkg içinde. Arch'ta sürüm düşürmek için eski sürümler gerekir, bu yüzden komut en yeni üçünü tutar. pacman-contrib ile gelir; root olarak çalıştırın.",
+    "paths": [],
+    "mode": "report",
+    "minAgeHours": null,
+    "risk": "review",
+    "admin": false,
+    "closeApps": [],
+    "command": "paccache -r",
+    "verified": true,
+    "source": "https://man.archlinux.org/man/paccache.8"
+  },
+  {
+    "id": "aur-helper-cache",
+    "group": "system",
+    "name": "AUR helper caches",
+    "nameTr": "AUR yardımcısı önbellekleri",
+    "description": "Sources and packages that yay and paru keep; downloaded and built again on the next install or update.",
+    "descriptionTr": "yay ve paru'nun tuttuğu kaynaklar ve paketler; bir sonraki kurulum ya da güncellemede yeniden indirilip derlenir.",
+    "paths": [
+      "%XDG_CACHE%/yay",
+      "%XDG_CACHE%/paru"
+    ],
+    "mode": "contents",
+    "minAgeHours": null,
+    "risk": "review",
+    "admin": false,
+    "closeApps": [
+      "yay",
+      "paru",
+      "makepkg",
+      "pacman"
+    ],
+    "verified": false
+  },
+  {
+    "id": "zypper-cache",
+    "group": "system",
+    "name": "Zypper cache",
+    "nameTr": "Zypper önbelleği",
+    "description": "Downloaded packages and repository metadata under /var/cache/zypp. The app does not touch this folder; run the command as root. Metadata is downloaded again on the next refresh.",
+    "descriptionTr": "/var/cache/zypp altındaki indirilmiş paketler ve depo üst verisi. Uygulama bu klasöre dokunmaz; komutu root olarak çalıştırın. Üst veri sonraki yenilemede yeniden indirilir.",
+    "paths": [],
+    "mode": "report",
+    "minAgeHours": null,
+    "risk": "safe",
+    "admin": false,
+    "closeApps": [],
+    "command": "zypper clean --all",
+    "verified": true,
+    "source": "https://github.com/openSUSE/zypper/blob/master/doc/zypper.8.txt"
+  },
+  {
+    "id": "zypper-kernels",
+    "group": "system",
+    "name": "Zypper old kernels",
+    "nameTr": "Zypper eski çekirdekleri",
+    "description": "Old kernels that the multiversion settings no longer ask to keep. Run the command as root; check first that the running kernel boots well, because older ones are your way back.",
+    "descriptionTr": "Çoklu sürüm ayarlarının artık saklanmasını istemediği eski çekirdekler. Komutu root olarak çalıştırın; önce çalışan çekirdeğin sorunsuz açıldığını kontrol edin, çünkü eskiler geri dönüş yolunuzdur.",
+    "paths": [],
+    "mode": "report",
+    "minAgeHours": null,
+    "risk": "caution",
+    "admin": false,
+    "closeApps": [],
+    "command": "zypper purge-kernels",
+    "verified": true,
+    "source": "https://github.com/openSUSE/zypper/blob/master/doc/zypper.8.txt"
+  },
+  {
+    "id": "journald-logs",
+    "group": "system",
+    "name": "System journal",
+    "nameTr": "Sistem günlüğü",
+    "description": "Archived logs in /var/log/journal, capped by default at 10% of the disk and at most 4 GB. The command needs root, keeps the newest 500 MB and removes only archived files; older history is lost. Read the size without root with journalctl --disk-usage.",
+    "descriptionTr": "/var/log/journal içindeki arşivlenmiş günlükler; varsayılan sınır diskin %10'u ve en çok 4 GB'dir. Komut root gerektirir, en yeni 500 MB'ı tutar ve yalnızca arşivlenmiş dosyaları siler; eski geçmiş kaybolur. Boyutu root olmadan journalctl --disk-usage ile görün.",
+    "paths": [],
+    "mode": "report",
+    "minAgeHours": null,
+    "risk": "review",
+    "admin": false,
+    "closeApps": [],
+    "command": "journalctl --rotate --vacuum-size=500M",
+    "verified": true,
+    "source": "https://www.freedesktop.org/software/systemd/man/latest/journalctl.html"
+  },
+  {
+    "id": "core-dumps",
+    "group": "system",
+    "name": "Core dumps",
+    "nameTr": "Çekirdek dökümleri",
+    "description": "Crash dumps in /var/lib/systemd/coredump. There is no cleaning command: systemd removes them after two weeks or when they pass its size limit. The command lists your own dumps.",
+    "descriptionTr": "/var/lib/systemd/coredump içindeki hata dökümleri. Temizlik komutu yoktur: systemd bunları iki hafta sonra veya boyut sınırı aşılınca siler. Komut kendi dökümlerinizi listeler.",
+    "paths": [],
+    "mode": "report",
+    "minAgeHours": null,
+    "risk": "review",
+    "admin": false,
+    "closeApps": [],
+    "command": "coredumpctl list",
+    "verified": true,
+    "source": "https://www.freedesktop.org/software/systemd/man/latest/coredump.conf.html"
+  },
+  {
+    "id": "system-temp",
+    "group": "system",
+    "name": "System temp folders",
+    "nameTr": "Sistem geçici klasörleri",
+    "description": "/tmp and /var/tmp, which often hold sockets and files in use, so the app does not touch them. Run the command as root: it follows the system's own age limits, by default 10 days for /tmp and 30 for /var/tmp.",
+    "descriptionTr": "/tmp ve /var/tmp çoğu zaman soket ve kullanımdaki dosyaları tutar, bu yüzden uygulama bunlara dokunmaz. Komutu root olarak çalıştırın: sistemin kendi yaş sınırlarını izler, varsayılan olarak /tmp için 10, /var/tmp için 30 gün.",
+    "paths": [],
+    "mode": "report",
+    "minAgeHours": null,
+    "risk": "review",
+    "admin": false,
+    "closeApps": [],
+    "command": "systemd-tmpfiles --clean",
+    "verified": true,
+    "source": "https://www.freedesktop.org/software/systemd/man/latest/systemd-tmpfiles.html"
+  },
+  {
+    "id": "snap-revisions",
+    "group": "system",
+    "name": "Old snap revisions",
+    "nameTr": "Eski snap sürümleri",
+    "description": "Disabled revisions in /var/lib/snapd/snaps, kept so you can revert. The command needs root and keeps two revisions per snap from the next refresh on; snap list --all shows them, and snap remove with --revision removes one now.",
+    "descriptionTr": "/var/lib/snapd/snaps içindeki devre dışı sürümler, geri dönebilmeniz için saklanır. Komut root gerektirir ve sonraki yenilemeden itibaren snap başına iki sürüm tutar; snap list --all bunları gösterir, snap remove ve --revision birini hemen siler.",
+    "paths": [],
+    "mode": "report",
+    "minAgeHours": null,
+    "risk": "review",
+    "admin": false,
+    "closeApps": [],
+    "command": "snap set system refresh.retain=2",
+    "verified": true,
+    "source": "https://snapcraft.io/docs/reference/administration/data-locations/"
+  },
+  {
+    "id": "snap-snapshots",
+    "group": "system",
+    "name": "Snap snapshots",
+    "nameTr": "Snap anlık görüntüleri",
+    "description": "Backups in /var/lib/snapd/snapshots of the data of removed snaps. The command lists them; snap forget with a set number removes one, and that data is then gone.",
+    "descriptionTr": "/var/lib/snapd/snapshots içindeki, kaldırılan snap'lerin verilerinin yedekleri. Komut bunları listeler; snap forget ve küme numarası birini siler, o veri artık geri gelmez.",
+    "paths": [],
+    "mode": "report",
+    "minAgeHours": null,
+    "risk": "review",
+    "admin": false,
+    "closeApps": [],
+    "command": "snap saved",
+    "verified": true,
+    "source": "https://snapcraft.io/docs/reference/administration/data-locations/"
+  },
+  {
+    "id": "flatpak-unused",
+    "group": "system",
+    "name": "Unused Flatpak runtimes",
+    "nameTr": "Kullanılmayan Flatpak çalışma ortamları",
+    "description": "Runtimes and extensions that no installed app needs; your per-user install is measured here and system installs in /var/lib/flatpak are not. App data is not touched. System installs ask for permission through polkit.",
+    "descriptionTr": "Hiçbir kurulu uygulamanın gerektirmediği çalışma ortamları ve eklentiler; burada kullanıcı kurulumunuz ölçülür, /var/lib/flatpak içindeki sistem kurulumları ölçülmez. Uygulama verilerine dokunulmaz. Sistem kurulumları polkit üzerinden izin ister.",
+    "paths": [
+      "%XDG_DATA%/flatpak"
+    ],
+    "mode": "report",
+    "minAgeHours": null,
+    "risk": "review",
+    "admin": false,
+    "closeApps": [],
+    "command": "flatpak uninstall --unused",
+    "verified": true,
+    "source": "https://docs.flatpak.org/en/latest/flatpak-command-reference.html"
+  },
+  {
+    "id": "docker-engine",
+    "group": "system",
+    "name": "Docker Engine data",
+    "nameTr": "Docker Engine verisi",
+    "description": "Stopped containers, unused networks, dangling images and build cache in /var/lib/docker, which only root can read. The command asks first; it leaves volumes and tagged images alone unless you add -a or --volumes. docker system df shows the sizes.",
+    "descriptionTr": "/var/lib/docker içindeki durmuş kapsayıcılar, kullanılmayan ağlar, etiketsiz imajlar ve derleme önbelleği; bu klasörü yalnızca root okuyabilir. Komut önce sorar; -a veya --volumes eklemedikçe birimlere ve etiketli imajlara dokunmaz. docker system df boyutları gösterir.",
+    "paths": [],
+    "mode": "report",
+    "minAgeHours": null,
+    "risk": "review",
+    "admin": false,
+    "closeApps": [],
+    "command": "docker system prune",
+    "verified": true,
+    "source": "https://docs.docker.com/reference/cli/docker/system/prune/"
+  },
+  {
+    "id": "podman-prune",
+    "group": "system",
+    "name": "Podman rootful data",
+    "nameTr": "Podman root verisi",
+    "description": "Stopped containers, unused pods and images of Podman under /var/lib/containers. Run the command as root for that store; it asks first and leaves volumes alone unless you add --volumes. Rootless Podman is measured separately.",
+    "descriptionTr": "Podman'ın /var/lib/containers altındaki durmuş kapsayıcıları, kullanılmayan pod'ları ve imajları. Bu depo için komutu root olarak çalıştırın; önce sorar ve --volumes eklemedikçe birimlere dokunmaz. Rootless Podman ayrı ölçülür.",
+    "paths": [],
+    "mode": "report",
+    "minAgeHours": null,
+    "risk": "review",
+    "admin": false,
+    "closeApps": [],
+    "command": "podman system prune",
+    "verified": true,
+    "source": "https://docs.podman.io/en/latest/markdown/podman-system-prune.1.html"
+  }
+]

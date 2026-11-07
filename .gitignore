@@ -1,0 +1,21 @@
+node_modules/
+frontend/node_modules/
+# Built by `bun run build`; the placeholder in the repo is enough for
+# `go build` to succeed before that.
+frontend/dist/assets/
+frontend/dist/*.js
+frontend/dist/*.css
+frontend/dist/*.woff2
+/build/
+/dist/
+/.mygo/
+mygo_windows_*.syso
+.DS_Store
+*.log
+.perch/
+gocleaner
+
+# The upstream Tauri project this was ported from, kept locally for reference.
+# It is a checkout of https://github.com/yusufky63/reclaim-cleaner, not part of
+# this build.
+/src/
